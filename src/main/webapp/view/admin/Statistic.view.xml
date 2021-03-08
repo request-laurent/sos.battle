@@ -1,0 +1,59 @@
+<mvc:View controllerName="com.sos.ui5.battle.controller.admin.Statistic" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:t="sap.ui.table">
+	<Page title="{i18n>page.Statistic.title}" showNavButton="true" navButtonPress="onNavBack">
+		<content>
+			<t:Table rows="{path : '/', sorter : {path : 'code'}}" selectionMode="Single" selectionBehavior="RowOnly" rowActionCount="1" visibleRowCountMode="Auto"
+				rowSelectionChange="onSelect">
+				<t:columns>
+					<t:Column sortProperty="code" filterProperty="code" width="20em">
+						<Label text="{i18n>data.statistic.code}" />
+						<t:template>
+							<Text text="{code}" />
+						</t:template>
+					</t:Column>
+					<t:Column sortProperty="nombre" filterProperty="nombre" width="8em" hAlign="Right">
+						<Label text="{i18n>data.statistic.nombre}" />
+						<t:template>
+							<Text text="{nombre}" />
+						</t:template>
+					</t:Column>
+					<t:Column sortProperty="temps" filterProperty="temps" width="8em" hAlign="Right">
+						<Label text="{i18n>data.statistic.temps}" />
+						<t:template>
+							<Text text="{path:'temps', type:'sap.ui.model.type.Float', formatOptions : {groupingEnabled: true, maxFractionDigits: 0}}" />
+						</t:template>
+					</t:Column>
+					<t:Column sortProperty="min" filterProperty="min" width="8em" hAlign="Right">
+						<Label text="{i18n>data.statistic.min}" />
+						<t:template>
+							<Text text="{path:'min', type:'sap.ui.model.type.Float', formatOptions : {groupingEnabled: true, maxFractionDigits: 0}}" />
+						</t:template>
+					</t:Column>
+					<t:Column sortProperty="max" filterProperty="max" width="8em" hAlign="Right">
+						<Label text="{i18n>data.statistic.max}" />
+						<t:template>
+							<Text text="{path:'max', type:'sap.ui.model.type.Float', formatOptions : {groupingEnabled: true, maxFractionDigits: 0}}" />
+						</t:template>
+					</t:Column>
+					<t:Column sortProperty="erreurs" filterProperty="erreurs" width="8em" hAlign="Right">
+						<Label text="{i18n>data.statistic.erreurs}" />
+						<t:template>
+							<Text text="{erreurs}" />
+						</t:template>
+					</t:Column>
+				</t:columns>
+				<t:rowActionTemplate>
+					<t:RowAction>
+						<t:RowActionItem press="onSelect" type="Navigation" icon="sap-icon://feeder-arrow" />
+					</t:RowAction>
+				</t:rowActionTemplate>
+			</t:Table>
+		</content>
+		<footer>
+			<OverflowToolbar>
+				<ToolbarSpacer />
+				<Button visible="true" text="{i18n>page.Statistic.reset}" enabled="true" type="Emphasized" icon="sap-icon://reset" press="onReset" />
+				<Button visible="true" text="{i18n>common.refresh}" enabled="true" type="Emphasized" icon="sap-icon://synchronize" press="onRefresh" />
+			</OverflowToolbar>
+		</footer>
+	</Page>
+</mvc:View>

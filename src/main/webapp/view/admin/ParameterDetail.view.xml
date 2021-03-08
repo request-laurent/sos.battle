@@ -1,0 +1,24 @@
+<mvc:View controllerName="com.sos.ui5.battle.controller.admin.ParameterDetail" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout"
+	xmlns:core="sap.ui.core">
+	<Page title="{i18n>page.ParameterList.title} > {/code}" showNavButton="true" navButtonPress="onNavBack">
+		<content>
+			<VBox>
+				<f:SimpleForm editable="true" layout="ResponsiveGridLayout">
+					<Label text="{i18n>data.parameter.code}" required="true" labelFor="code" />
+					<Input id="code" value="{/code}" enabled="false" valueState="{= ${/code} ? 'None' : 'Error' }" />
+					<Label text="{i18n>data.parameter.value}" labelFor="valeur" />
+					<Input id="valeur" value="{/value}" type="{=(${/code}.includes('PWD') || ${/code}.includes('PASSWORD'))?'Password':'Text'}" />
+					<Label text="{i18n>data.parameter.description}" labelFor="description" />
+					<Input id="description" value="{/description}" />
+				</f:SimpleForm>
+			</VBox>
+		</content>
+		<footer>
+			<OverflowToolbar>
+				<ToolbarSpacer />
+				<Button visible="true" text="{i18n>common.submit}" enabled="true" type="Accept" icon="sap-icon://accept" press="onValidate" />
+				<Button visible="true" text="{i18n>common.cancel}" enabled="true" type="Reject" icon="sap-icon://cancel" press="onReject" />
+			</OverflowToolbar>
+		</footer>
+	</Page>
+</mvc:View>

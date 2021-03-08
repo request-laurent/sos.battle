@@ -1,0 +1,37 @@
+<mvc:View controllerName="com.sos.ui5.battle.controller.admin.GroupsDetail" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns:t="sap.ui.table">
+	<Page title="{i18n>page.GroupsList.title}  > {/name}" showNavButton="true" navButtonPress="onNavBack">
+		<content>
+			<t:Table id="table" rows="{/roles}" selectionMode="MultiToggle" ariaLabelledBy="title" visibleRowCountMode="Auto">
+				<t:extension>
+					<f:SimpleForm editable="true" layout="ResponsiveGridLayout">
+						<Label text="{i18n>data.user.name}" required="true" labelFor="name" />
+						<Input id="name" value="{/name}" valueState="{= ${/name} ? 'None' : 'Error' }" />
+					</f:SimpleForm>
+				</t:extension>
+				<t:toolbar>
+					<Toolbar>
+						<content>
+							<Title id="title" text="{i18n>data.groups.roles}" />
+						</content>
+					</Toolbar>
+				</t:toolbar>
+				<t:columns>
+					<t:Column width="100%">
+						<Label text="{i18n>data.groups.role}" />
+						<t:template>
+							<Text text="{name}" />
+						</t:template>
+					</t:Column>
+				</t:columns>
+			</t:Table>
+		</content>
+		<footer>
+			<OverflowToolbar>
+				<ToolbarSpacer />
+				<Button visible="true" text="{i18n>common.submit}" enabled="true" type="Accept" icon="sap-icon://accept" press="onValidate" />
+				<Button visible="true" text="{i18n>common.cancel}" enabled="true" type="Reject" icon="sap-icon://cancel" press="onReject" />
+			</OverflowToolbar>
+		</footer>
+	</Page>
+</mvc:View>

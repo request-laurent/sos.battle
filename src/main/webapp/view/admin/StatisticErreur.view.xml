@@ -1,0 +1,37 @@
+<mvc:View controllerName="com.sos.ui5.battle.controller.admin.StatisticErreur" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:t="sap.ui.table">
+	<Page title="{i18n>page.StatisticErreur.title}" showNavButton="true" navButtonPress="onNavBack">
+		<content>
+			<t:Table id="table" rows="{path : '/', sorter : {path : 'date'}}" selectionMode="Single" selectionBehavior="RowOnly" rowSelectionChange="onSelect" visibleRowCount="5">
+				<t:columns>
+					<t:Column sortProperty="date" filterProperty="date" width="10em">
+						<Label text="{i18n>data.statisticErreur.date}" />
+						<t:template>
+							<Text text="{path:'date', type:'sap.ui.model.type.DateTime', formatOptions: {source: {pattern: 'timestamp'}, style: 'short'}}" />
+						</t:template>
+					</t:Column>
+					<t:Column sortProperty="message" filterProperty="message" width="100%">
+						<Label text="{i18n>data.statisticErreur.message}" />
+						<t:template>
+							<Text text="{message}" />
+						</t:template>
+					</t:Column>
+				</t:columns>
+			</t:Table>
+			<Panel width="auto" class="sapUiResponsiveMargin">
+				<headerToolbar>
+					<Toolbar height="3rem">
+						<Title text="{i18n>page.StatisticErreur.stack}" />
+					</Toolbar>
+				</headerToolbar>
+				<content>
+					<FormattedText htmlText="{stack>/}" />
+				</content>
+			</Panel>
+		</content>
+		<footer>
+			<OverflowToolbar>
+				<ToolbarSpacer />
+			</OverflowToolbar>
+		</footer>
+	</Page>
+</mvc:View>

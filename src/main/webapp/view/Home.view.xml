@@ -1,0 +1,14 @@
+<mvc:View controllerName="com.sos.ui5.battle.controller.Home" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc">
+	<Page showHeader="false">
+		<l:BlockLayout id="BlockLayout" background="Default">
+			<l:BlockLayoutRow>
+				<l:BlockLayoutCell class="sapUiNoContentPadding">
+					<Image src="img/battle.jpg" width="100%" densityAware="false" backgroundPosition="initial" backgroundSize="cover"/>
+					<l:VerticalLayout>
+						<Title text="{i18n>app.title}" titleStyle="H3" class="homeImageTitle" />
+					</l:VerticalLayout>
+				</l:BlockLayoutCell>
+			</l:BlockLayoutRow>
+		</l:BlockLayout>
+	</Page>
+</mvc:View>

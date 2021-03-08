@@ -1,0 +1,32 @@
+.logo {
+    height: 5rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.code .sapMInputBaseInner {
+	font-family: "Courier New";
+}
+
+.formHiddenTitle .sapUiFormContainerTitle .sapUiFormTitle {
+	height: 0px;
+	padding: 0rem;
+}
+
+.homeImageTitle {
+	  position: absolute;
+    left: 0;
+    color: #ffffff;
+    text-shadow: 0 0 0.125rem #000000;
+    top: 2.5rem;
+    font-size: 4rem;
+    padding-left: 3rem;
+}
+
+.reportBattle .sapMObjStatusText {
+	font-size: 2rem;
+}
+
+a {
+	  color: #00B0F4;
+}

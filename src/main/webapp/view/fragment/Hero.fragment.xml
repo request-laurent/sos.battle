@@ -1,0 +1,55 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:u="sap.ui.unified" xmlns:core="sap.ui.core">
+	<Dialog title="{sos>id_hero}">
+		<content>
+			<l:VerticalLayout class="sapUiResponsiveContentPadding">
+
+				<f:SimpleForm editable="true" layout="ResponsiveGridLayout" columnsXL="3" columnsL="3" columnsM="3">
+					<Label text="{sos>id_hero}" required="true" />
+					<ComboBox items="{path:'survivors>/', templateShareable:true}" selectedKey="{survivor>/id}" width="100%" valueState="{= ${survivor>/id} ? 'None' : 'Error' }" selectionChange="heroChange">
+						<core:Item key="{survivors>hero}" text="{survivors>name}" />
+					</ComboBox>
+
+					<Label text="{sos>player_power_up_hero_level}" required="true" />
+					<ComboBox items="{path:'ranks>/', templateShareable:true}" selectedKey="{hero>/id}" width="100%" valueState="{= ${hero>/id} ? 'None' : 'Error' }"  enabled="{= !!${survivor>/id}}">
+						<core:Item key="{ranks>id}" text="{ranks>rankName}" />
+					</ComboBox>
+
+					<Label text="{sos>id_skills} 1" />
+					<ComboBox items="{path:'skills1>/', templateShareable:true}" selectedKey="{hero>/skills/0}" width="100%" showSecondaryValues="false" enabled="{= !!${survivor>/id}}">
+						<core:ListItem key="{skills1>id}" text="{skills1>lvl}- {skills1>name}" />
+					</ComboBox>
+
+					<Label text="{sos>id_skills} 2" />
+					<ComboBox items="{path:'skills2>/', templateShareable:true}" selectedKey="{hero>/skills/1}" width="100%" showSecondaryValues="false" enabled="{= !!${survivor>/id}}">
+						<core:ListItem key="{skills2>id}" text="{skills2>lvl}- {skills2>name}" />
+					</ComboBox>
+
+					<Label text="{sos>id_skills} 3" />
+					<ComboBox items="{path:'skills3>/', templateShareable:true}" selectedKey="{hero>/skills/2}" width="100%" showSecondaryValues="false" enabled="{= !!${survivor>/id}}">
+						<core:ListItem key="{skills3>id}" text="{skills3>lvl}- {skills3>name}" />
+					</ComboBox>
+
+					<Label text="{sos>hero_equipment} 1" />
+					<ComboBox items="{path:'equipment1>/', templateShareable:true}" selectedKey="{hero>/equipment/0}" width="100%" showSecondaryValues="false" enabled="{= !!${survivor>/id}}">
+						<core:ListItem key="{equipment1>id}" text="{equipment1>lvl}- {equipment1>name}" />
+					</ComboBox>
+
+					<Label text="{sos>hero_equipment} 2" />
+					<ComboBox items="{path:'equipment2>/', templateShareable:true}" selectedKey="{hero>/equipment/1}" width="100%" showSecondaryValues="false" enabled="{= !!${survivor>/id}}">
+						<core:ListItem key="{equipment2>id}" text="{equipment2>lvl}- {equipment2>name}" />
+					</ComboBox>
+
+					<Label text="{sos>hero_equipment} 3" />
+					<ComboBox items="{path:'equipment3>/', templateShareable:true}" selectedKey="{hero>/equipment/2}" width="100%" showSecondaryValues="false" enabled="{= !!${survivor>/id}}">
+						<core:ListItem key="{equipment3>id}" text="{equipment3>lvl}- {equipment3>name}" />
+					</ComboBox>
+
+				</f:SimpleForm>
+			</l:VerticalLayout>
+		</content>
+		<buttons>
+			<Button visible="true" text="{i18n>common.submit}" enabled="true" type="Accept" icon="sap-icon://accept" press="onValidate" />
+			<Button visible="true" text="{i18n>common.cancel}" enabled="true" type="Reject" icon="sap-icon://cancel" press="onReject" />
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

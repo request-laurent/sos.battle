@@ -1,0 +1,28 @@
+<mvc:View controllerName="com.sos.ui5.battle.controller.admin.UserDetail" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout"
+	xmlns:core="sap.ui.core">
+	<Page title="{i18n>page.UserList.title} > {/name}" showNavButton="true" navButtonPress="onNavBack">
+		<content>
+			<VBox>
+				<f:SimpleForm editable="true" layout="ResponsiveGridLayout">
+					<Label text="{i18n>data.user.code}" required="true" labelFor="code" />
+					<Input id="code" value="{/code}" valueState="{= ${/code} ? 'None' : 'Error' }" />
+					<Label text="{i18n>data.user.password}" required="false" labelFor="zpassword" />
+					<Input id="zpassword" value="{/password}" type="Password" />
+					<Label text="{i18n>data.user.name}" required="true" labelFor="zname" />
+					<Input id="zname" value="{/name}" valueState="{= ${/name} ? 'None' : 'Error' }" />
+					<Label text="{i18n>data.user.group}" required="true" labelFor="group" />
+					<ComboBox id="group" items="{group>/}" selectedKey="{/group/id}" required="true" valueState="{= ${/group/id} ? 'None' : 'Error' }">
+						<core:Item key="{group>id}" text="{group>name}" />
+					</ComboBox>
+				</f:SimpleForm>
+			</VBox>
+		</content>
+		<footer>
+			<OverflowToolbar>
+				<ToolbarSpacer />
+				<Button visible="true" text="{i18n>common.submit}" enabled="true" type="Accept" icon="sap-icon://accept" press="onValidate" />
+				<Button visible="true" text="{i18n>common.cancel}" enabled="true" type="Reject" icon="sap-icon://cancel" press="onReject" />
+			</OverflowToolbar>
+		</footer>
+	</Page>
+</mvc:View>

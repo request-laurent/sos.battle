@@ -1,0 +1,54 @@
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+
+  <!-- Filtre sur toutes les requettes pour conserver le contexte (i18n, security ...) -->
+  <filter>
+    <filter-name>ContextFilter</filter-name>
+    <filter-class>com.sos.ui5.battle.web.ContextFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>ContextFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <!-- CacheBuster UI5 pour optimiser le cahce des ressources -->
+  <filter>
+    <filter-name>AppCacheBusterFilter</filter-name>
+    <filter-class>com.sap.ui5.resource.AppCacheBusterFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>AppCacheBusterFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <!-- Chargement / déchargement des ressources -->
+  <listener>
+    <listener-class>
+      com.sos.ui5.battle.web.ContextListener
+    </listener-class>
+  </listener>
+  
+  <!-- WebServices métier -->
+  <servlet>
+    <servlet-name>jax-rs-serlvet</servlet-name>
+    <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+    <init-param>
+      <param-name>jersey.config.server.provider.packages</param-name>
+      <param-value>com.sos.ui5.battle.web</param-value>
+    </init-param>
+    <init-param>
+      <param-name>com.sun.jersey.api.json.POJOMappingFeature</param-name>
+      <param-value>true</param-value>
+    </init-param>
+    <init-param>
+      <param-name>jersey.config.server.provider.classnames</param-name>
+      <param-value>org.glassfish.jersey.server.filter.RolesAllowedDynamicFeature</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+    <servlet-mapping>
+    <servlet-name>jax-rs-serlvet</servlet-name>
+    <url-pattern>/rest/*</url-pattern>
+  </servlet-mapping>
+</web-app>

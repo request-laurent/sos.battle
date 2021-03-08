@@ -1,0 +1,3 @@
+<mvc:View controllerName="com.sos.ui5.battle.controller.NotFound" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc">
+  <MessagePage title="{i18n>page.NotFound.title}" text="{i18n>page.NotFound.text}" description="{i18n>page.NotFound.description}" showNavButton="true" navButtonPress="onNavBack" />
+</mvc:View>

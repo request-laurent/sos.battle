@@ -1,0 +1,310 @@
+{
+	"short_name": "SOS Battle Simulator",
+	"name": "SOS Battle Simulator",
+	"icons": [
+		{
+			"src": "img/battle.png",
+			"type": "image/png",
+			"sizes": "192x192"
+		}
+	],
+	"start_url": "index.html",
+	
+	"_version": "1.2.0",
+	"sap.app": {
+		"_version": "1.2.0",
+		"id": "com.sos.ui5.battle",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{app.title}}",
+		"description": "{{app.description}}"
+	},
+	"sap.ui": {
+		"_version": "1.2.0",
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_belize"
+		]
+	},
+	"sap.ui5": {
+		"_version": "1.2.0",
+		"handleValidation": true,
+		"rootView": {
+			"viewName": "com.sos.ui5.battle.view.App",
+			"type": "XML"
+		},
+		"dependencies": {
+			"minUI5Version": "1.30.0",
+			"libs": {
+				"sap.ui.core": {
+					
+				},
+				"sap.m": {
+					
+				},
+				"sap.ui.layout": {
+					
+				},
+				"sap.ui.unified": {
+					
+				}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "com.sos.ui5.battle.i18n.i18n"
+				}
+			},
+			"sos": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "com.sos.ui5.battle.i18n.sos"
+				}
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewPath": "com.sos.ui5.battle.view",
+				"viewType": "XML",
+				"controlId": "mainContents",
+				"viewLevel": 1,
+				"controlAggregation": "pages",
+				"transition": "show",
+				"clearAggregation": true,
+				"bypassed": {
+					"target": "NotFound"
+				}
+			},
+			"routes": [
+				{
+					"name": "Home",
+					"pattern": "",
+					"target": "Home"
+				},
+				{
+					"name": "ParameterList",
+					"pattern": "ParameterList",
+					"target": "ParameterList"
+				},
+				{
+					"name": "UserList",
+					"pattern": "UserList",
+					"target": "UserList"
+				},
+				{
+					"name": "ParameterDetail",
+					"pattern": "ParameterDetail/{id}",
+					"target": "ParameterDetail"
+				},
+				{
+					"name": "UserDetail",
+					"pattern": "UserDetail/{id}",
+					"target": "UserDetail"
+				},
+				{
+					"name": "GroupsList",
+					"pattern": "GroupsList",
+					"target": "GroupsList"
+				},
+				{
+					"name": "GroupsDetail",
+					"pattern": "GroupsDetail/{id}",
+					"target": "GroupsDetail"
+				},
+				{
+					"name": "Statistic",
+					"pattern": "Statistic",
+					"target": "Statistic"
+				},
+				{
+					"name": "StatisticErreur",
+					"pattern": "StatisticErreur/{code}",
+					"target": "StatisticErreur"
+				},
+				{
+					"name": "BatchList",
+					"pattern": "BatchList",
+					"target": "BatchList"
+				},
+				{
+					"name": "BatchLog",
+					"pattern": "BatchLog/{id}",
+					"target": "BatchLog"
+				},
+				{
+					"name": "BatchLogDetail",
+					"pattern": "BatchLogDetail/{id}",
+					"target": "BatchLogDetail"
+				},
+				{
+					"name": "BatchDetail",
+					"pattern": "BatchDetail/{id}",
+					"target": "BatchDetail"
+				},
+				{
+					"name": "PlayerList",
+					"pattern": "PlayerList",
+					"target": "PlayerList"
+				},
+				{
+					"name": "PlayerDetail",
+					"pattern": "PlayerDetail/{id}",
+					"target": "PlayerDetail"
+				},
+				{
+					"name": "AllianceList",
+					"pattern": "AllianceList",
+					"target": "AllianceList"
+				},
+				{
+					"name": "AllianceDetail",
+					"pattern": "AllianceDetail/{id}",
+					"target": "AllianceDetail"
+				},
+				{
+					"name": "BunkerList",
+					"pattern": "BunkerList",
+					"target": "BunkerList"
+				},
+				{
+					"name": "Alliance",
+					"pattern": "Alliance",
+					"target": "Alliance"
+				},
+				{
+					"name": "Battle",
+					"pattern": "Battle",
+					"target": "Battle"
+				},
+				{
+					"name": "Files",
+					"pattern": "Files",
+					"target": "Files"
+				}
+			],
+			"targets": {
+				"Home": {
+					"viewName": "Home"
+				},
+				"NotFound": {
+					"viewName": "NotFound",
+					"transition": "show"
+				},
+				"ParameterList": {
+					"viewPath": "com.sos.ui5.battle.view.admin",
+					"viewName": "ParameterList"
+				},
+				"UserList": {
+					"viewPath": "com.sos.ui5.battle.view.admin",
+					"viewName": "UserList"
+				},
+				"UserDetail": {
+					"viewPath": "com.sos.ui5.battle.view.admin",
+					"viewName": "UserDetail"
+				},
+				"ParameterDetail": {
+					"viewPath": "com.sos.ui5.battle.view.admin",
+					"viewName": "ParameterDetail"
+				},
+				"GroupsList": {
+					"viewPath": "com.sos.ui5.battle.view.admin",
+					"viewName": "GroupsList"
+				},
+				"GroupsDetail": {
+					"viewPath": "com.sos.ui5.battle.view.admin",
+					"viewName": "GroupsDetail"
+				},
+				"Statistic": {
+					"viewPath": "com.sos.ui5.battle.view.admin",
+					"viewName": "Statistic"
+				},
+				"StatisticErreur": {
+					"viewPath": "com.sos.ui5.battle.view.admin",
+					"viewName": "StatisticErreur"
+				},
+				"BatchList": {
+					"viewPath": "com.sos.ui5.battle.view.admin",
+					"viewName": "BatchList"
+				},
+				"BatchLog": {
+					"viewPath": "com.sos.ui5.battle.view.admin",
+					"viewName": "BatchLog"
+				},
+				"BatchLogDetail": {
+					"viewPath": "com.sos.ui5.battle.view.admin",
+					"viewName": "BatchLogDetail"
+				},
+				"BatchDetail": {
+					"viewPath": "com.sos.ui5.battle.view.admin",
+					"viewName": "BatchDetail"
+				},
+				"PlayerList": {
+					"viewPath": "com.sos.ui5.battle.view.sos",
+					"viewName": "PlayerList"
+				},
+				"PlayerDetail": {
+					"viewPath": "com.sos.ui5.battle.view.sos",
+					"viewName": "PlayerDetail"
+				},
+				"AllianceList": {
+					"viewPath": "com.sos.ui5.battle.view.sos",
+					"viewName": "AllianceList"
+				},
+				"AllianceDetail": {
+					"viewPath": "com.sos.ui5.battle.view.sos",
+					"viewName": "AllianceDetail"
+				},
+				"BunkerList": {
+					"viewPath": "com.sos.ui5.battle.view.sos",
+					"viewName": "BunkerList"
+				},
+				"Alliance": {
+					"viewPath": "com.sos.ui5.battle.view.sos",
+					"viewName": "Alliance"
+				},
+				"Battle": {
+					"viewPath": "com.sos.ui5.battle.view.sos",
+					"viewName": "Battle"
+				},
+				"Files": {
+					"viewPath": "com.sos.ui5.battle.view.sos",
+					"viewName": "Files"
+				}
+			}
+		}
+	},
+	"sap.platform.hcp": {
+		"uri": "src/main/webapp",
+		"_version": "1.1.0"
+	}
+}

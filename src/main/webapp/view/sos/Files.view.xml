@@ -1,0 +1,33 @@
+<mvc:View controllerName="com.sos.ui5.battle.controller.sos.Files" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout"
+	xmlns:core="sap.ui.core">
+	<Page title="SOS Files" showNavButton="true" navButtonPress="onNavBack">
+		<content>
+			<VBox>
+				<f:SimpleForm editable="true" layout="ResponsiveGridLayout">
+					<Label text="Game version" />
+					<Text text="{/game_version}" />
+					<Label text="Game version" />
+					<Input value="{/game_version}" />
+
+					<Label text="Bundle version" />
+					<Text text="{/bundle_version_r}" />
+					<Label text="Bundle version" />
+					<Input value="{/bundle_version_r}" />
+
+					<Label text="JSON version" />
+					<Text text="{/config_version} ({path:'/config_version2', type:'sap.ui.model.type.DateTime', formatOptions: {source: {pattern: 'timestamp'}, style: 'long'}})" />
+					<Label text="JSON version" />
+					<Input value="{/config_version}" />
+				</f:SimpleForm>
+			</VBox>
+		</content>
+		<footer>
+			<OverflowToolbar>
+				<ToolbarSpacer />
+				<Button text="json" type="Emphasized" icon="sap-icon://attachment-zip-file" press="onJson" />
+				<Button text="lang" type="Emphasized" icon="sap-icon://attachment-zip-file" press="onLang" />
+				<Button text="bundle" type="Emphasized" icon="sap-icon://attachment-zip-file" press="onBundle" />
+			</OverflowToolbar>
+		</footer>
+	</Page>
+</mvc:View>

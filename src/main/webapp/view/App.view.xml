@@ -1,0 +1,44 @@
+<mvc:View height="100%" controllerName="com.sos.ui5.battle.controller.App" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:tnt="sap.tnt">
+	<tnt:ToolPage id="app" class="sapUiDemoToolPage" sideExpanded="{view>/sideExpanded}">
+		<tnt:header>
+			<tnt:ToolHeader>
+				<Button id="sideNavigationToggleButton" icon="sap-icon://menu2" type="Transparent" press="onSideNavButtonPress">
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow" />
+					</layoutData>
+				</Button>
+				<ToolbarSpacer />
+				<Title text="{i18n>app.title}" />
+				<ToolbarSpacer />
+				<Button id="userButton" text="{user>/name}" icon="{user>/avatar}" type="Transparent" press="onUserNamePress">
+					<layoutData>
+						<OverflowToolbarLayoutData closeOverflowOnInteraction="false" />
+					</layoutData>
+				</Button>
+			</tnt:ToolHeader>
+		</tnt:header>
+		<tnt:sideContent>
+			<tnt:SideNavigation id="sideNavigation">
+				<tnt:item>
+					<tnt:NavigationList>
+						<tnt:NavigationListItem text="{sos>id_battle}" icon="sap-icon://shield" select="onItemSelect" key="Battle" visible="{user>/roles/BATTLE}" />
+						<tnt:NavigationListItem text="{i18n>menu.administration}" icon="sap-icon://action-settings" visible="{user>/roles/ADMIN}">
+							<tnt:NavigationListItem text="{i18n>page.ParameterList.title}" select="onItemSelect" key="ParameterList" visible="{user>/roles/ADMIN}" />
+							<tnt:NavigationListItem text="{i18n>page.UserList.title}" select="onItemSelect" key="UserList" visible="{user>/roles/ADMIN}" />
+							<tnt:NavigationListItem text="{i18n>page.GroupsList.title}" select="onItemSelect" key="GroupsList" visible="{user>/roles/ADMIN}" />
+							<tnt:NavigationListItem text="{i18n>page.Statistic.title}" select="onItemSelect" key="Statistic" visible="{user>/roles/ADMIN}" />
+						</tnt:NavigationListItem>
+					</tnt:NavigationList>
+				</tnt:item>
+				<tnt:fixedItem>
+					<tnt:NavigationList>
+						<tnt:NavigationListItem text="{i18n>menu.exit}" icon="sap-icon://log" select="onExit" />
+					</tnt:NavigationList>
+				</tnt:fixedItem>
+			</tnt:SideNavigation>
+		</tnt:sideContent>
+		<tnt:mainContents>
+			<App id="mainContents" />
+		</tnt:mainContents>
+	</tnt:ToolPage>
+</mvc:View>

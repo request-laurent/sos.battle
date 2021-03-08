@@ -1,0 +1,10 @@
+<Context>
+<Resource name="jdbc/sqlhana" auth="Container" type="javax.sql.DataSource"
+		username="sqlhana" password="sqlhana" driverClassName="org.mariadb.jdbc.Driver"
+		url="jdbc:mariadb:failover://localhost/sqlhana?sessionVariables=sql_mode='STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION'" maxActive="100" maxIdle="1" />
+
+<!-- 	<Resource name="jdbc/sqlhana" auth="Container" type="javax.sql.DataSource" -->
+<!-- 		username="sqlhana" password="sqlhana" driverClassName="org.mariadb.jdbc.Driver" -->
+<!-- 		url="jdbc:mariadb:failover://cexvcudb1t,cexvcudb2t/sqlhana?sessionVariables=sql_mode='STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION'" maxActive="100" maxIdle="1" /> -->
+
+</Context>

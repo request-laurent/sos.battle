@@ -1,0 +1,22 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:u="sap.ui.unified" xmlns:core="sap.ui.core">
+	<Dialog title="{sos>id_load}">
+		<content>
+			<l:VerticalLayout class="sapUiResponsiveContentPadding">
+
+				<f:SimpleForm editable="true" layout="ResponsiveGridLayout" columnsXL="3" columnsL="3" columnsM="3">
+					<Label text="{sos>id_troops}" required="true" />
+
+					<ComboBox items="{path: 'templates>/',	sorter: {path: 'name', descending: false,	group: true}, templateShareable:true}" selectedKey="{save>/id}" width="100%"
+						valueState="{= ${save>/id} ? 'None' : 'Error' }">
+						<core:Item key="{templates>id}" text="{templates>lvl}" />
+					</ComboBox>
+
+				</f:SimpleForm>
+			</l:VerticalLayout>
+		</content>
+		<buttons>
+			<Button visible="true" text="{i18n>common.submit}" enabled="true" type="Accept" icon="sap-icon://accept" press="onValidate" />
+			<Button visible="true" text="{i18n>common.cancel}" enabled="true" type="Reject" icon="sap-icon://cancel" press="onReject" />
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

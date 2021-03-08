@@ -1,0 +1,782 @@
+<mvc:View controllerName="com.sos.ui5.battle.controller.sos.Battle" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:t="sap.ui.table" xmlns:chart="sap.suite.ui.microchart"
+	xmlns:viz="sap.viz.ui5.controls" xmlns:viz.data="sap.viz.ui5.data" xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds">
+	<Page title="{sos>id_battle}" showNavButton="false" navButtonPress="onNavBack" class="sapUiSizeCompact">
+		<content>
+			<IconTabBar class="sapUiResponsiveContentPadding" expandable="false" stretchContentHeight="false" selectedKey="{view>/key}">
+				<items>
+					<IconTabFilter icon="sap-icon://hint" text="{i18n>common.information}" iconColor="Neutral" key="information">
+						<VBox class="sapUiTinyMargin">
+							<core:HTML
+								content="
+&lt;h2 dir=&quot;ltr&quot; style=&quot;text-align: center;&quot;&gt;Hi survivors !&lt;/h2&gt;
+&lt;table border=&quot;0&quot;&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&quot;https://cdn.discordapp.com/avatars/653367194566000650/7d729c3eaad7e5e96e8e1cb57582ffb6.png?size=128&quot; alt=&quot;&quot; /&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p dir=&quot;ltr&quot;&gt;I&#39;ve always wanted to understand what happens in a State Of Survival battle. &lt;span&gt;Some are just curious, but it&#39;s like the grail for others to be able to find the magic formula which is hidden behind &lt;/span&gt; 😜.&lt;/p&gt;
+&lt;p dir=&quot;ltr&quot;&gt;For six months now I have been trying to unravel Kings&#39; little secrets. But the subject is very complex. It is with the new fighting system that I have made decisive discoveries that have allowed me to understand and reproduce now a complete battle.&lt;/p&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p dir=&quot;ltr&quot;&gt;The battle mechanics of the game is realy complex. You have no idea how many formulas and parameters used😵. Kings must have had as much trouble making and calibrating a realistic engine as I did finding their formulas. At first I used an Excel file but that was quickly insufficient. So I developed this application to simulate and understand the result of a battle with an accuracy of &amp;gt; 99%.&lt;/p&gt;
+&lt;p dir=&quot;ltr&quot;&gt;⚠️The simulator only works for states with the &lt;strong&gt;new battle engine&lt;/strong&gt; (currently below 285). This simulator is designed for those who have a good understanding of the game and who are looking for a better understanding of the battle mechanics in order to optimise them. It will not answer simple questions (what ratio should I use). If this is not your case, you don&#39;t have to do anything here ⚠️&lt;/p&gt;
+&lt;p dir=&quot;ltr&quot;&gt;Please read &lt;a href=&quot;https://en.ultimate-guide.ovh/fights/battle-simulator&quot;&gt;this guide&lt;/a&gt; carefully and make sure that the clibration works correctly.&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;&lt;b&gt;request / SOS COLLAB TEAM:&amp;nbsp;&lt;/b&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Websites:&amp;nbsp;&lt;/span&gt;&lt;a title=&quot;https://en.ultimate-guide.ovh/&quot; href=&quot;https://en.ultimate-guide.ovh/&quot; rel=&quot;noreferrer noopener&quot; target=&quot;_blank&quot; role=&quot;button&quot; tabindex=&quot;0&quot;&gt;&lt;span&gt;https://en.ultimate-guide.ovh/&lt;/span&gt;&lt;/a&gt;&amp;nbsp;&amp;amp;&amp;nbsp;&lt;a href=&quot;http://www.savagery-gaming.com/&quot;&gt;http://www.savagery-gaming.com/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Discord Server:&amp;nbsp;&lt;a href=&quot;https://discord.gg/s6HgMGV&quot; target=&quot;_self&quot;&gt;https://discord.gg/s6HgMGV&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Last update : 2021-05-05 (1.9.130 version)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;If you want to support my work on State of Survival&lt;/p&gt;
+&lt;form action=&quot;https://www.paypal.com/donate&quot; method=&quot;post&quot; target=&quot;_top&quot;&gt;&lt;input type=&quot;hidden&quot; name=&quot;hosted_button_id&quot; value=&quot;66PRNLAGU9THL&quot; /&gt;&lt;input type=&quot;image&quot; src=&quot;https://www.paypalobjects.com/en_US/FR/i/btn/btn_donateCC_LG.gif&quot; border=&quot;0&quot; name=&quot;submit&quot; title=&quot;PayPal - The safer, easier way to pay online!&quot; alt=&quot;Donate with PayPal button&quot; style=&quot;display: block; margin-left: auto; margin-right: auto;&quot; /&gt;&lt;img alt=&quot;&quot; border=&quot;0&quot; src=&quot;https://www.paypal.com/en_FR/i/scr/pixel.gif&quot; width=&quot;1&quot; height=&quot;1&quot; /&gt;&lt;/form&gt;
+&lt;p&gt;&lt;/p&gt; " />
+						</VBox>
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://action-settings" text="{sos>id_battle}" iconColor="Neutral" key="battle">
+						<VBox class="sapUiTinyMargin">
+							<Text text="{sos>id_battle}" />
+							<ComboBox selectedKey="{/battleType}" width="100%" valueState="{= ${/battleType} ? 'None' : 'Error' }">
+								<core:ListItem key="BATTLE_WONDER" text="{sos>id_institute} / {sos>item_intel_state_fortified_bunker}" />
+								<core:ListItem key="BATTLE_CITY_ATTACK" text="{sos>id_settlement}" />
+								<core:ListItem key="BATTLE_CITY_ATTACK_RALLY" text="{sos>id_settlement} {sos>id_rally}" />
+								<core:ListItem key="BATTLE_MONSTER_ATTACK" text="{sos>id_infected}" />
+								<core:ListItem key="BATTLE_GVE_RALLY" text="{sos>id_infected} {sos>id_rally}" />
+								<core:ListItem key="BATTLE_GATHER_ATTACK" text="{sos>alliance_vault_summary_troops_gathering}" />
+								<core:ListItem key="BATTLE_ALLIANCE_BOSS" text="{sos>id_alliance_portal}" />
+							</ComboBox>
+							<Text text="{i18n>page.Battle.maxRound}" />
+							<StepInput value="{/maxRound}" min="1" step="1" valueState="{= ${/maxRound} ? 'None' : 'Error' }" />
+						</VBox>
+					</IconTabFilter>
+
+					<IconTabFilter icon="sap-icon://favorite" text="{sos>id_attacker}" iconColor="Neutral">
+						<VBox class="sapUiTinyMargin">
+							<OverflowToolbar>
+								<ToolbarSpacer />
+								<Button text="{i18n>page.Battle.load}" type="Emphasized" icon="sap-icon://download" press=".onLoad('/attacker')" />
+								<Button text="{i18n>page.Battle.save}" type="Emphasized" icon="sap-icon://save" press=".onSave('/attacker')" />
+							</OverflowToolbar>
+
+							<HBox alignItems="Center">
+								<Text text="{sos>id_infected}" />
+								<Switch type="AcceptReject" state="{/attacker/monster}" enabled="true" visible="true" />
+							</HBox>
+
+							<Table>
+								<headerToolbar>
+									<Toolbar>
+										<Title text="{sos>alliance_territory_benefits_total_name}" level="H4" />
+										<ToolbarSpacer />
+										<Text text="{i18n>statsIncluded}" />
+										<Switch type="AcceptReject" state="{/attacker/statsIncluded}" enabled="true" visible="true" />
+									</Toolbar>
+								</headerToolbar>
+								<columns>
+									<Column>
+										<Text text="{sos>id_type}" />
+									</Column>
+									<Column minScreenWidth="30rem" demandPopin="true">
+										<Text text="{sos>id_attack}" />
+									</Column>
+									<Column minScreenWidth="30rem" demandPopin="true">
+										<Text text="{sos>id_defense}" />
+									</Column>
+									<Column minScreenWidth="30rem" demandPopin="true">
+										<Text text="{sos>id_health}" />
+									</Column>
+									<Column minScreenWidth="30rem" demandPopin="true">
+										<Text text="{sos>id_lethality}" />
+									</Column>
+								</columns>
+
+								<items>
+									<ColumnListItem>
+										<cells>
+											<Text text="{sos>id_troops}" />
+											<Input
+												value="{path:'/attacker/boost/300002', type:'com.sos.ui5.battle.controller.sos.Percent', formatOptions: {minFractionDigits:1}, constraints:{minimum:0, maximum:10, emptyString: null}}" />
+											<Input
+												value="{path:'/attacker/boost/300004', type:'com.sos.ui5.battle.controller.sos.Percent', formatOptions: {minFractionDigits:1}, constraints:{minimum:0, maximum:10, emptyString: null}}" />
+											<Input
+												value="{path:'/attacker/boost/300006', type:'com.sos.ui5.battle.controller.sos.Percent', formatOptions: {minFractionDigits:1}, constraints:{minimum:0, maximum:10, emptyString: null}}" />
+											<Input
+												value="{path:'/attacker/boost/300008', type:'com.sos.ui5.battle.controller.sos.Percent', formatOptions: {minFractionDigits:1}, constraints:{minimum:0, maximum:10, emptyString: null}}" />
+										</cells>
+									</ColumnListItem>
+									<ColumnListItem>
+										<cells>
+											<Text text="{sos>survivor_tag_infantry}" />
+											<Input
+												value="{path:'/attacker/boost/300014', type:'com.sos.ui5.battle.controller.sos.Percent', formatOptions: {minFractionDigits:1}, constraints:{minimum:0, maximum:10, emptyString: null}}" />
+											<Input
+												value="{path:'/attacker/boost/300016', type:'com.sos.ui5.battle.controller.sos.Percent', formatOptions: {minFractionDigits:1}, constraints:{minimum:0, maximum:10, emptyString: null}}" />
+											<Input
+												value="{path:'/attacker/boost/300018', type:'com.sos.ui5.battle.controller.sos.Percent', formatOptions: {minFractionDigits:1}, constraints:{minimum:0, maximum:10, emptyString: null}}" />
+											<Input
+												value="{path:'/attacker/boost/300020', type:'com.sos.ui5.battle.controller.sos.Percent', formatOptions: {minFractionDigits:1}, constraints:{minimum:0, maximum:10, emptyString: null}}" />
+										</cells>
+									</ColumnListItem>
+									<ColumnListItem>
+										<cells>
+											<Text text="{sos>survivor_tag_cavalry}" />
+											<Input
+												value="{path:'/attacker/boost/300038', type:'com.sos.ui5.battle.controller.sos.Percent', formatOptions: {minFractionDigits:1}, constraints:{minimum:0, maximum:10, emptyString: null}}" />
+											<Input
+												value="{path:'/attacker/boost/300040', type:'com.sos.ui5.battle.controller.sos.Percent', formatOptions: {minFractionDigits:1}, constraints:{minimum:0, maximum:10, emptyString: null}}" />
+											<Input
+												value="{path:'/attacker/boost/300042', type:'com.sos.ui5.battle.controller.sos.Percent', formatOptions: {minFractionDigits:1}, constraints:{minimum:0, maximum:10, emptyString: null}}" />
+											<Input
+												value="{path:'/attacker/boost/300044', type:'com.sos.ui5.battle.controller.sos.Percent', formatOptions: {minFractionDigits:1}, constraints:{minimum:0, maximum:10, emptyString: null}}" />
+										</cells>
+									</ColumnListItem>
+									<ColumnListItem>
+										<cells>
+											<Text text="{sos>survivor_tag_ranged}" />
+											<Input
+												value="{path:'/attacker/boost/300026', type:'com.sos.ui5.battle.controller.sos.Percent', formatOptions: {minFractionDigits:1}, constraints:{minimum:0, maximum:10, emptyString: null}}" />
+											<Input
+												value="{path:'/attacker/boost/300028', type:'com.sos.ui5.battle.controller.sos.Percent', formatOptions: {minFractionDigits:1}, constraints:{minimum:0, maximum:10, emptyString: null}}" />
+											<Input
+												value="{path:'/attacker/boost/300030', type:'com.sos.ui5.battle.controller.sos.Percent', formatOptions: {minFractionDigits:1}, constraints:{minimum:0, maximum:10, emptyString: null}}" />
+											<Input
+												value="{path:'/attacker/boost/300032', type:'com.sos.ui5.battle.controller.sos.Percent', formatOptions: {minFractionDigits:1}, constraints:{minimum:0, maximum:10, emptyString: null}}" />
+										</cells>
+									</ColumnListItem>
+								</items>
+							</Table>
+
+							<t:Table rows="{/attacker/troops}" selectionMode="None" rowActionCount="1" visibleRowCount="{= ${/attacker/troops}.length}">
+								<t:toolbar>
+									<Toolbar>
+										<content>
+											<Title text="{sos>id_troops}" level="H4" />
+											<ToolbarSpacer />
+											<Button tooltip="{i18n>common.add}" icon="sap-icon://add" press=".onAdd($event, '/attacker/troops')" />
+										</content>
+									</Toolbar>
+								</t:toolbar>
+								<t:columns>
+									<t:Column>
+										<Label text="{sos>id_type}" />
+										<t:template>
+											<ComboBox items="{path:'units>/', templateShareable:true}" selectedKey="{id}" width="100%" valueState="{= ${id} ? 'None' : 'Error' }">
+												<core:ListItem key="{units>id}" text="{units>name} {units>tier}" />
+											</ComboBox>
+										</t:template>
+									</t:Column>
+									<t:Column>
+										<Label text="{sos>id_quantity}" />
+										<t:template>
+											<StepInput value="{number}" min="0" step="100" valueState="{= ${number}>=0 ? 'None' : 'Error' }" />
+										</t:template>
+									</t:Column>
+								</t:columns>
+								<t:rowActionTemplate>
+									<t:RowAction>
+										<t:RowActionItem press=".onDelete($event, '/attacker/troops')" type="Custom" icon="sap-icon://delete" />
+									</t:RowAction>
+								</t:rowActionTemplate>
+							</t:Table>
+
+							<t:Table id="grid1" rows="{/attacker/heroes}" selectionMode="Multi" rowActionCount="2" visibleRowCount="{= ${/attacker/heroes}.length}" rowSelectionChange="rowSelectionChange">
+								<t:toolbar>
+									<Toolbar>
+										<content>
+											<Title text="{sos>id_hero}" level="H4" />
+											<ObjectStatus text="({view>/attacker/heroes}/3)" inverted="true" state="{=${view>/attacker/heroes}&gt;3?'Error':(${view>/attacker/heroes}&lt;3?'Warning':'Success')}" />
+											<ToolbarSpacer />
+											<Button tooltip="{i18n>common.add}" icon="sap-icon://add" press=".onAddHeroes($event, '/attacker/heroes')" />
+										</content>
+									</Toolbar>
+								</t:toolbar>
+								<t:columns>
+									<t:Column width="100%">
+										<Label text="{sos>id_hero}" />
+										<t:template>
+											<HBox alignItems="Center">
+												<Avatar src="{parts: [{path:'id'}, {value:'heros'}, {value:'image'}], formatter: '.getObj'}" displaySize="XS" displayShape="Square" />
+												<Text text="{parts: [{path:'id'}, {value:'heros'}, {value:'name'}], formatter: '.getObj'} {parts: [{path:'id'}, {value:'heros'}, {value:'rank'}], formatter: '.getObj'}"
+													class="sapUiTinyMarginBegin" wrapping="false" />
+											</HBox>
+										</t:template>
+									</t:Column>
+									<t:Column width="13em">
+										<Label text="{sos>id_skills}" />
+										<t:template>
+											<!-- <ComboBox items="{path:'skills>/', templateShareable:true}" selectedKey="{skills/0}" width="100%" showSecondaryValues="true" valueState="{= ${id} ? 'None' : 'Error' 
+												}"> -->
+											<!-- <core:ListItem key="{skills>id}" text="{skills>lvl}" additionalText="{skills>name}" /> -->
+											<!-- </ComboBox> -->
+											<HBox alignItems="Center">
+												<Avatar src="{parts: [{path:'skills/0'}, {value:'skills'}, {value:'image'}], formatter: '.getObj'}" displaySize="XS" displayShape="Square" />
+												<ObjectStatus class="sapUiTinyMarginBeginEnd" text="{parts: [{path:'skills/0'}, {value:'skills'}, {value:'lvl'}], formatter: '.getObj'}" inverted="true"
+													state="None" />
+												<Avatar src="{parts: [{path:'skills/1'}, {value:'skills'}, {value:'image'}], formatter: '.getObj'}" displaySize="XS" displayShape="Square" />
+												<ObjectStatus class="sapUiTinyMarginBeginEnd" text="{parts: [{path:'skills/1'}, {value:'skills'}, {value:'lvl'}], formatter: '.getObj'}" inverted="true"
+													state="None" />
+												<Avatar src="{parts: [{path:'skills/2'}, {value:'skills'}, {value:'image'}], formatter: '.getObj'}" displaySize="XS" displayShape="Square" />
+												<ObjectStatus class="sapUiTinyMarginBeginEnd" text="{parts: [{path:'skills/2'}, {value:'skills'}, {value:'lvl'}], formatter: '.getObj'}" inverted="true"
+													state="None" />
+											</HBox>
+										</t:template>
+									</t:Column>
+									<t:Column width="15em">
+										<Label text="{sos>hero_equipment}" />
+										<t:template>
+											<HBox alignItems="Center">
+												<Avatar src="{parts: [{path:'equipment/0'}, {value:'equipment'}, {value:'image'}], formatter: '.getObj'}" displaySize="XS" displayShape="Square" />
+												<ObjectStatus class="sapUiTinyMarginBeginEnd" text="{parts: [{path:'equipment/0'}, {value:'equipment'}, {value:'lvl'}], formatter: '.getObj'}" inverted="true"
+													state="None" />
+												<Avatar src="{parts: [{path:'equipment/1'}, {value:'equipment'}, {value:'image'}], formatter: '.getObj'}" displaySize="XS" displayShape="Square" />
+												<ObjectStatus class="sapUiTinyMarginBeginEnd" text="{parts: [{path:'equipment/1'}, {value:'equipment'}, {value:'lvl'}], formatter: '.getObj'}" inverted="true"
+													state="None" />
+												<Avatar src="{parts: [{path:'equipment/2'}, {value:'equipment'}, {value:'image'}], formatter: '.getObj'}" displaySize="XS" displayShape="Square" />
+												<ObjectStatus class="sapUiTinyMarginBeginEnd" text="{parts: [{path:'equipment/2'}, {value:'equipment'}, {value:'lvl'}], formatter: '.getObj'}" inverted="true"
+													state="None" />
+											</HBox>
+										</t:template>
+									</t:Column>
+								</t:columns>
+								<t:rowActionTemplate>
+									<t:RowAction>
+										<t:RowActionItem press=".onDelete($event, '/attacker/heroes')" type="Custom" icon="sap-icon://delete" />
+										<t:RowActionItem press=".onAddHeroes($event, '/attacker/heroes')" type="Custom" icon="sap-icon://edit" />
+									</t:RowAction>
+								</t:rowActionTemplate>
+							</t:Table>
+
+							<t:Table rows="{/attacker/skillsJoiner}" visibleRowCount="{= ${/attacker/skillsJoiner}.length}" selectionMode="None" rowActionCount="2">
+								<t:toolbar>
+									<Toolbar>
+										<content>
+											<Title text="{i18n>joinerKills}" level="H4" />
+											<ToolbarSpacer />
+											<Button tooltip="{i18n>common.add}" icon="sap-icon://add" press=".onAddSkills($event, '/attacker/skillsJoiner')" />
+										</content>
+									</Toolbar>
+								</t:toolbar>
+								<t:columns>
+									<t:Column width="100%">
+										<Label text="{sos>id_skills}" />
+										<t:template>
+											<HBox alignItems="Center">
+												<Avatar src="{parts: [{path:''}, {value:'skills'}, {value:'image'}], formatter: '.getObj'}" displaySize="XS" displayShape="Square" />
+												<ObjectStatus class="sapUiTinyMarginBeginEnd" text="{parts: [{path:''}, {value:'skills'}, {value:'lvl'}], formatter: '.getObj'}" inverted="true" state="None" />
+											</HBox>
+										</t:template>
+									</t:Column>
+								</t:columns>
+								<t:rowActionTemplate>
+									<t:RowAction>
+										<t:RowActionItem press=".onDelete($event, '/attacker/skillsJoiner')" type="Custom" icon="sap-icon://delete" />
+										<t:RowActionItem press=".onAddSkills($event, '/attacker/skillsJoiner')" type="Custom" icon="sap-icon://edit" />
+									</t:RowAction>
+								</t:rowActionTemplate>
+							</t:Table>
+
+							<t:Table rows="{/attacker/buffs}" selectionMode="None" rowActionCount="1" visibleRowCount="{= ${/attacker/buffs}.length}">
+								<t:toolbar>
+									<Toolbar>
+										<content>
+											<Title text="{sos>id_benefits}" level="H4" />
+											<ToolbarSpacer />
+											<Button tooltip="{i18n>common.add}" icon="sap-icon://add" press=".onAdd($event, '/attacker/buffs')" />
+										</content>
+									</Toolbar>
+								</t:toolbar>
+								<t:columns>
+									<t:Column>
+										<Label text="{sos>id_type}" />
+										<t:template>
+											<ComboBox items="{path:'buffs>/', templateShareable:true}" selectedKey="{id}" width="100%" valueState="{= ${id} ? 'None' : 'Error' }">
+												<core:ListItem key="{buffs>id}" text="{buffs>name}" />
+											</ComboBox>
+										</t:template>
+									</t:Column>
+									<t:Column>
+										<Label text="{sos>id_benefits}" />
+										<t:template>
+											<Input
+												value="{path:'value', type:'com.sos.ui5.battle.controller.sos.Percent', formatOptions: {minFractionDigits:1}, constraints:{minimum:-10, maximum:10, emptyString: null}}" valueState="{= ${value} ? 'None' : 'Error' }" />
+										</t:template>
+									</t:Column>
+								</t:columns>
+								<t:rowActionTemplate>
+									<t:RowAction>
+										<t:RowActionItem press=".onDelete($event, '/attacker/buffs')" type="Custom" icon="sap-icon://delete" />
+									</t:RowAction>
+								</t:rowActionTemplate>
+							</t:Table>
+						</VBox>
+					</IconTabFilter>
+
+					<IconTabFilter icon="sap-icon://shield" text="{sos>id_defender}" iconColor="Neutral">
+						<VBox class="sapUiTinyMargin">
+							<OverflowToolbar>
+								<ToolbarSpacer />
+								<Button text="{i18n>page.Battle.load}" type="Emphasized" icon="sap-icon://download" press=".onLoad('/attacked')" />
+								<Button text="{i18n>page.Battle.save}" type="Emphasized" icon="sap-icon://save" press=".onSave('/attacked')" />
+							</OverflowToolbar>
+
+							<HBox alignItems="Center">
+								<Text text="{sos>id_infected}" />
+								<Switch type="AcceptReject" state="{/attacked/monster}" enabled="true" visible="true" />
+							</HBox>
+
+							<Table>
+								<headerToolbar>
+									<Toolbar>
+										<Title text="{sos>alliance_territory_benefits_total_name}" level="H4" />
+										<ToolbarSpacer />
+										<Text text="{i18n>statsIncluded}" />
+										<Switch type="AcceptReject" state="{/attacked/statsIncluded}" enabled="true" visible="true" />
+									</Toolbar>
+								</headerToolbar>
+								<columns>
+									<Column>
+										<Text text="{sos>id_type}" />
+									</Column>
+									<Column minScreenWidth="10rem" demandPopin="true">
+										<Text text="{sos>id_attack}" />
+									</Column>
+									<Column minScreenWidth="10rem" demandPopin="true">
+										<Text text="{sos>id_defense}" />
+									</Column>
+									<Column minScreenWidth="10rem" demandPopin="true">
+										<Text text="{sos>id_health}" />
+									</Column>
+									<Column minScreenWidth="10rem" demandPopin="true">
+										<Text text="{sos>id_lethality}" />
+									</Column>
+								</columns>
+
+								<items>
+									<ColumnListItem>
+										<cells>
+											<Text text="{sos>id_troops}" />
+											<Input
+												value="{path:'/attacked/boost/300002', type:'com.sos.ui5.battle.controller.sos.Percent', formatOptions: {minFractionDigits:1}, constraints:{minimum:0, maximum:10, emptyString: null}}" />
+											<Input
+												value="{path:'/attacked/boost/300004', type:'com.sos.ui5.battle.controller.sos.Percent', formatOptions: {minFractionDigits:1}, constraints:{minimum:0, maximum:10, emptyString: null}}" />
+											<Input
+												value="{path:'/attacked/boost/300006', type:'com.sos.ui5.battle.controller.sos.Percent', formatOptions: {minFractionDigits:1}, constraints:{minimum:0, maximum:10, emptyString: null}}" />
+											<Input
+												value="{path:'/attacked/boost/300008', type:'com.sos.ui5.battle.controller.sos.Percent', formatOptions: {minFractionDigits:1}, constraints:{minimum:0, maximum:10, emptyString: null}}" />
+										</cells>
+									</ColumnListItem>
+									<ColumnListItem>
+										<cells>
+											<Text text="{sos>survivor_tag_infantry}" />
+											<Input
+												value="{path:'/attacked/boost/300014', type:'com.sos.ui5.battle.controller.sos.Percent', formatOptions: {minFractionDigits:1}, constraints:{minimum:0, maximum:10, emptyString: null}}" />
+											<Input
+												value="{path:'/attacked/boost/300016', type:'com.sos.ui5.battle.controller.sos.Percent', formatOptions: {minFractionDigits:1}, constraints:{minimum:0, maximum:10, emptyString: null}}" />
+											<Input
+												value="{path:'/attacked/boost/300018', type:'com.sos.ui5.battle.controller.sos.Percent', formatOptions: {minFractionDigits:1}, constraints:{minimum:0, maximum:10, emptyString: null}}" />
+											<Input
+												value="{path:'/attacked/boost/300020', type:'com.sos.ui5.battle.controller.sos.Percent', formatOptions: {minFractionDigits:1}, constraints:{minimum:0, maximum:10, emptyString: null}}" />
+										</cells>
+									</ColumnListItem>
+									<ColumnListItem>
+										<cells>
+											<Text text="{sos>survivor_tag_cavalry}" />
+											<Input
+												value="{path:'/attacked/boost/300038', type:'com.sos.ui5.battle.controller.sos.Percent', formatOptions: {minFractionDigits:1}, constraints:{minimum:0, maximum:10, emptyString: null}}" />
+											<Input
+												value="{path:'/attacked/boost/300040', type:'com.sos.ui5.battle.controller.sos.Percent', formatOptions: {minFractionDigits:1}, constraints:{minimum:0, maximum:10, emptyString: null}}" />
+											<Input
+												value="{path:'/attacked/boost/300042', type:'com.sos.ui5.battle.controller.sos.Percent', formatOptions: {minFractionDigits:1}, constraints:{minimum:0, maximum:10, emptyString: null}}" />
+											<Input
+												value="{path:'/attacked/boost/300044', type:'com.sos.ui5.battle.controller.sos.Percent', formatOptions: {minFractionDigits:1}, constraints:{minimum:0, maximum:10, emptyString: null}}" />
+										</cells>
+									</ColumnListItem>
+									<ColumnListItem>
+										<cells>
+											<Text text="{sos>survivor_tag_ranged}" />
+											<Input
+												value="{path:'/attacked/boost/300026', type:'com.sos.ui5.battle.controller.sos.Percent', formatOptions: {minFractionDigits:1}, constraints:{minimum:0, maximum:10, emptyString: null}}" />
+											<Input
+												value="{path:'/attacked/boost/300028', type:'com.sos.ui5.battle.controller.sos.Percent', formatOptions: {minFractionDigits:1}, constraints:{minimum:0, maximum:10, emptyString: null}}" />
+											<Input
+												value="{path:'/attacked/boost/300030', type:'com.sos.ui5.battle.controller.sos.Percent', formatOptions: {minFractionDigits:1}, constraints:{minimum:0, maximum:10, emptyString: null}}" />
+											<Input
+												value="{path:'/attacked/boost/300032', type:'com.sos.ui5.battle.controller.sos.Percent', formatOptions: {minFractionDigits:1}, constraints:{minimum:0, maximum:10, emptyString: null}}" />
+										</cells>
+									</ColumnListItem>
+								</items>
+							</Table>
+
+							<t:Table rows="{/attacked/troops}" selectionMode="None" rowActionCount="1" visibleRowCount="{= ${/attacked/troops}.length}">
+								<t:toolbar>
+									<Toolbar>
+										<content>
+											<Title text="{sos>id_troops}" level="H4" />
+											<ToolbarSpacer />
+											<Button tooltip="{i18n>common.add}" icon="sap-icon://add" press=".onAdd($event, '/attacked/troops')" />
+										</content>
+									</Toolbar>
+								</t:toolbar>
+								<t:columns>
+									<t:Column>
+										<Label text="{sos>id_type}" />
+										<t:template>
+											<ComboBox items="{path:'units>/', templateShareable:true}" selectedKey="{id}" width="100%" valueState="{= ${id} ? 'None' : 'Error' }">
+												<core:ListItem key="{units>id}" text="{units>name} {units>tier}" />
+											</ComboBox>
+										</t:template>
+									</t:Column>
+									<t:Column>
+										<Label text="{sos>id_quantity}" />
+										<t:template>
+											<StepInput value="{number}" min="0" step="100" valueState="{= ${number}>=0 ? 'None' : 'Error' }" />
+										</t:template>
+									</t:Column>
+								</t:columns>
+								<t:rowActionTemplate>
+									<t:RowAction>
+										<t:RowActionItem press=".onDelete($event, '/attacked/troops')" type="Custom" icon="sap-icon://delete" />
+									</t:RowAction>
+								</t:rowActionTemplate>
+							</t:Table>
+
+							<t:Table id="grid2" rows="{/attacked/heroes}" selectionMode="Multi" rowActionCount="2" visibleRowCount="{= ${/attacked/heroes}.length}" rowSelectionChange="rowSelectionChange">
+								<t:toolbar>
+									<Toolbar>
+										<content>
+											<Title text="{sos>id_hero}" level="H4" />
+											<ObjectStatus text="({view>/attacked/heroes}/3)" inverted="true" state="{=${view>/attacked/heroes}&gt;3?'Error':(${view>/attacked/heroes}&lt;3?'Warning':'Success')}" />
+											<ToolbarSpacer />
+											<Button tooltip="{i18n>common.add}" icon="sap-icon://add" press=".onAddHeroes($event, '/attacked/heroes')" />
+										</content>
+									</Toolbar>
+								</t:toolbar>
+								<t:columns>
+									<t:Column width="100%">
+										<Label text="{sos>id_hero}" />
+										<t:template>
+											<HBox alignItems="Center">
+												<Avatar src="{parts: [{path:'id'}, {value:'heros'}, {value:'image'}], formatter: '.getObj'}" displaySize="XS" displayShape="Square" />
+												<Text text="{parts: [{path:'id'}, {value:'heros'}, {value:'name'}], formatter: '.getObj'} {parts: [{path:'id'}, {value:'heros'}, {value:'rank'}], formatter: '.getObj'}"
+													class="sapUiTinyMarginBegin" wrapping="false" />
+											</HBox>
+										</t:template>
+									</t:Column>
+									<t:Column width="13em">
+										<Label text="{sos>id_skills}" />
+										<t:template>
+											<HBox alignItems="Center">
+												<Avatar src="{parts: [{path:'skills/0'}, {value:'skills'}, {value:'image'}], formatter: '.getObj'}" displaySize="XS" displayShape="Square" />
+												<ObjectStatus class="sapUiTinyMarginBeginEnd" text="{parts: [{path:'skills/0'}, {value:'skills'}, {value:'lvl'}], formatter: '.getObj'}" inverted="true"
+													state="None" />
+												<Avatar src="{parts: [{path:'skills/1'}, {value:'skills'}, {value:'image'}], formatter: '.getObj'}" displaySize="XS" displayShape="Square" />
+												<ObjectStatus class="sapUiTinyMarginBeginEnd" text="{parts: [{path:'skills/1'}, {value:'skills'}, {value:'lvl'}], formatter: '.getObj'}" inverted="true"
+													state="None" />
+												<Avatar src="{parts: [{path:'skills/2'}, {value:'skills'}, {value:'image'}], formatter: '.getObj'}" displaySize="XS" displayShape="Square" />
+												<ObjectStatus class="sapUiTinyMarginBeginEnd" text="{parts: [{path:'skills/2'}, {value:'skills'}, {value:'lvl'}], formatter: '.getObj'}" inverted="true"
+													state="None" />
+											</HBox>
+										</t:template>
+									</t:Column>
+									<t:Column width="15em">
+										<Label text="{sos>hero_equipment}" />
+										<t:template>
+											<HBox alignItems="Center">
+												<Avatar src="{parts: [{path:'equipment/0'}, {value:'equipment'}, {value:'image'}], formatter: '.getObj'}" displaySize="XS" displayShape="Square" />
+												<ObjectStatus class="sapUiTinyMarginBeginEnd" text="{parts: [{path:'equipment/0'}, {value:'equipment'}, {value:'lvl'}], formatter: '.getObj'}" inverted="true"
+													state="None" />
+												<Avatar src="{parts: [{path:'equipment/1'}, {value:'equipment'}, {value:'image'}], formatter: '.getObj'}" displaySize="XS" displayShape="Square" />
+												<ObjectStatus class="sapUiTinyMarginBeginEnd" text="{parts: [{path:'equipment/1'}, {value:'equipment'}, {value:'lvl'}], formatter: '.getObj'}" inverted="true"
+													state="None" />
+												<Avatar src="{parts: [{path:'equipment/2'}, {value:'equipment'}, {value:'image'}], formatter: '.getObj'}" displaySize="XS" displayShape="Square" />
+												<ObjectStatus class="sapUiTinyMarginBeginEnd" text="{parts: [{path:'equipment/2'}, {value:'equipment'}, {value:'lvl'}], formatter: '.getObj'}" inverted="true"
+													state="None" />
+											</HBox>
+										</t:template>
+									</t:Column>
+								</t:columns>
+								<t:rowActionTemplate>
+									<t:RowAction>
+										<t:RowActionItem press=".onDelete($event, '/attacked/heroes')" type="Custom" icon="sap-icon://delete" />
+										<t:RowActionItem press=".onAddHeroes($event, '/attacked/heroes')" type="Custom" icon="sap-icon://edit" />
+									</t:RowAction>
+								</t:rowActionTemplate>
+							</t:Table>
+
+							<t:Table rows="{/attacked/skillsJoiner}" visibleRowCount="{= ${/attacked/skillsJoiner}.length}" selectionMode="None" rowActionCount="2">
+								<t:toolbar>
+									<Toolbar>
+										<content>
+											<Title text="{i18n>joinerKills}" level="H4" />
+											<ToolbarSpacer />
+											<Button tooltip="{i18n>common.add}" icon="sap-icon://add" press=".onAddSkills($event, '/attacked/skillsJoiner')" />
+										</content>
+									</Toolbar>
+								</t:toolbar>
+								<t:columns>
+									<t:Column width="100%">
+										<Label text="{sos>id_skills}" />
+										<t:template>
+											<HBox alignItems="Center">
+												<Avatar src="{parts: [{path:''}, {value:'skills'}, {value:'image'}], formatter: '.getObj'}" displaySize="XS" displayShape="Square" />
+												<ObjectStatus class="sapUiTinyMarginBeginEnd" text="{parts: [{path:''}, {value:'skills'}, {value:'lvl'}], formatter: '.getObj'}" inverted="true" state="None" />
+											</HBox>
+										</t:template>
+									</t:Column>
+								</t:columns>
+								<t:rowActionTemplate>
+									<t:RowAction>
+										<t:RowActionItem press=".onDelete($event, '/attacked/skillsJoiner')" type="Custom" icon="sap-icon://delete" />
+										<t:RowActionItem press=".onAddSkills($event, '/attacked/skillsJoiner')" type="Custom" icon="sap-icon://edit" />
+									</t:RowAction>
+								</t:rowActionTemplate>
+							</t:Table>
+
+							<t:Table rows="{/attacked/buffs}" selectionMode="None" rowActionCount="1" visibleRowCount="{= ${/attacked/buffs}.length}">
+								<t:toolbar>
+									<Toolbar>
+										<content>
+											<Title text="{sos>id_benefits}" level="H4" />
+											<ToolbarSpacer />
+											<Button tooltip="{i18n>common.add}" icon="sap-icon://add" press=".onAdd($event, '/attacked/buffs')" />
+										</content>
+									</Toolbar>
+								</t:toolbar>
+								<t:columns>
+									<t:Column>
+										<Label text="{sos>id_type}" />
+										<t:template>
+											<ComboBox items="{path:'buffs>/', templateShareable:true}" selectedKey="{id}" width="100%" valueState="{= ${id} ? 'None' : 'Error' }">
+												<core:ListItem key="{buffs>id}" text="{buffs>name}" />
+											</ComboBox>
+										</t:template>
+									</t:Column>
+									<t:Column>
+										<Label text="{sos>id_benefits}" />
+										<t:template>
+											<Input
+												value="{path:'value', type:'com.sos.ui5.battle.controller.sos.Percent', formatOptions: {minFractionDigits:1}, constraints:{minimum:-10, maximum:10, emptyString: null}}" valueState="{= ${value} ? 'None' : 'Error' }" />
+										</t:template>
+									</t:Column>
+								</t:columns>
+								<t:rowActionTemplate>
+									<t:RowAction>
+										<t:RowActionItem press=".onDelete($event, '/attacked/buffs')" type="Custom" icon="sap-icon://delete" />
+									</t:RowAction>
+								</t:rowActionTemplate>
+							</t:Table>
+						</VBox>
+					</IconTabFilter>
+
+					<IconTabFilter icon="sap-icon://filter-analytics" text="{sos>id_reports}" iconColor="Neutral" enabled="{view>/report}" key="report">
+
+						<HBox justifyContent="Center" alignItems="Center">
+							<ObjectStatus class="reportBattle" text="{= ${result>/result/0/success} ? ${sos>battle_report_victory_title} : ${sos>battle_show_defeat}}" inverted="true"
+								state="{= ${result>/result/0/score}&gt;0 ? 'Success' : (${result>/result/0/score}&lt;-0.5 ? 'Error' : 'Warning' ) }" />
+						</HBox>
+						<HBox justifyContent="Center" alignItems="Center">
+							<Text text="{sos>id_score}" />
+							<chart:BulletMicroChart size="L" scale="%" targetValue="0" minValue="-100" maxValue="100" class="sapUiSmallMargin" mode="Delta" showDeltaValue="true"
+								showValueMarker="false" showActualValueInDeltaMode="true">
+								<chart:actual>
+									<chart:BulletMicroChartData value="{= Math.round(${result>/result/0/score}*10000)/100}" color="{= ${result>/result/0/score}&gt;0 ? 'Good' : (${result>/result/0/score}&lt;-0.5 ? 'Error' : 'Critical' ) }" />
+								</chart:actual>
+								<chart:thresholds>
+									<chart:BulletMicroChartData value="-100" color="Error" />
+									<chart:BulletMicroChartData value="-50" color="Critical" />
+									<chart:BulletMicroChartData value="50" color="Good" />
+									<chart:BulletMicroChartData value="100" color="Good" />
+								</chart:thresholds>
+							</chart:BulletMicroChart>
+						</HBox>
+
+						<Panel expandable="true" expanded="true" headerText="{sos>id_reports}" width="auto">
+							<Table>
+								<columns>
+									<Column>
+										<Text text="{sos>id_type}" />
+									</Column>
+									<Column minScreenWidth="10em" demandPopin="true">
+										<Text text="{sos>id_attacker}" />
+									</Column>
+									<Column minScreenWidth="10em" demandPopin="true">
+										<Text text="{sos>id_defender}" />
+									</Column>
+								</columns>
+
+								<items>
+									<ColumnListItem>
+										<cells>
+											<Text text="{sos>id_troops}" />
+											<ObjectStatus text="{path:'result>/result/1/start', type:'sap.ui.model.type.Integer', formatOptions:{groupingEnabled:true}}" inverted="false" state="None" />
+											<ObjectStatus text="{path:'result>/result/2/start', type:'sap.ui.model.type.Integer', formatOptions:{groupingEnabled:true}}" inverted="false" state="None" />
+										</cells>
+									</ColumnListItem>
+									<ColumnListItem>
+										<cells>
+											<Text text="{sos>id_losses}" />
+											<ObjectStatus text="{path:'result>/result/1/dead', type:'sap.ui.model.type.Integer', formatOptions:{groupingEnabled:true}}" inverted="false" state="Error" />
+											<ObjectStatus text="{path:'result>/result/2/dead', type:'sap.ui.model.type.Integer', formatOptions:{groupingEnabled:true}}" inverted="false" state="Error" />
+										</cells>
+									</ColumnListItem>
+									<ColumnListItem>
+										<cells>
+											<Text text="{sos>troops_detail_wounded_info}" />
+											<ObjectStatus text="{path:'result>/result/1/wound', type:'sap.ui.model.type.Integer', formatOptions:{groupingEnabled:true}}" inverted="false" state="Warning" />
+											<ObjectStatus text="{path:'result>/result/2/wound', type:'sap.ui.model.type.Integer', formatOptions:{groupingEnabled:true}}" inverted="false" state="Warning" />
+										</cells>
+									</ColumnListItem>
+									<ColumnListItem>
+										<cells>
+											<Text text="{sos>battle_log_minor_injury}" />
+											<ObjectStatus text="{path:'result>/result/1/minorWound', type:'sap.ui.model.type.Integer', formatOptions:{groupingEnabled:true}}" inverted="false" state="Warning" />
+											<ObjectStatus text="{path:'result>/result/2/minorWound', type:'sap.ui.model.type.Integer', formatOptions:{groupingEnabled:true}}" inverted="false" state="Warning" />
+										</cells>
+									</ColumnListItem>
+									<ColumnListItem>
+										<cells>
+											<Text text="{sos>id_survived}" />
+											<ObjectStatus text="{path:'result>/result/1/end', type:'sap.ui.model.type.Integer', formatOptions:{groupingEnabled:true}}" inverted="false" state="Success" />
+											<ObjectStatus text="{path:'result>/result/2/end', type:'sap.ui.model.type.Integer', formatOptions:{groupingEnabled:true}}" inverted="false" state="Success" />
+										</cells>
+									</ColumnListItem>
+								</items>
+							</Table>
+						</Panel>
+
+						<Panel expandable="true" expanded="true" headerText="{sos>alliance_territory_benefits_total_name}" width="auto">
+							<Table items="{result>/stats}">
+								<columns>
+									<Column>
+										<Text text="{sos>id_type}" />
+									</Column>
+									<Column minScreenWidth="10em" demandPopin="true">
+										<Text text="{sos>id_attacker}" />
+									</Column>
+									<Column minScreenWidth="10em" demandPopin="true">
+										<Text text="{sos>id_defender}" />
+									</Column>
+								</columns>
+
+								<items>
+									<ColumnListItem>
+										<cells>
+											<Text text="{parts: [{path:'result>stat'}, {value:'benefits'}, {value:'name'}], formatter: '.getObj'}" />
+											<Text text="{path:'result>attacker', type:'com.sos.ui5.battle.controller.sos.Percent', formatOptions: {decimals:2}}" />
+											<Text text="{path:'result>attacked', type:'com.sos.ui5.battle.controller.sos.Percent', formatOptions: {decimals:2}}" />
+										</cells>
+									</ColumnListItem>
+								</items>
+							</Table>
+						</Panel>
+						
+						<Panel expandable="true" expanded="true" headerText="{sos>chief_battle_detail_title}" width="auto">
+							<Table>
+								<columns>
+									<Column>
+										<Text text="{sos>id_attacker} {sos>id_troops}" />
+									</Column>
+									<Column minScreenWidth="10em" demandPopin="true">
+										<Text text="{sos>id_attacker} {sos>id_troops}" />
+									</Column>
+									<Column minScreenWidth="10em" demandPopin="true">
+										<Text text="{sos>id_attacker} {sos>id_survived}" />
+									</Column>
+									<Column minScreenWidth="10em" demandPopin="true">
+										<Text text="{sos>id_defender} {sos>id_troops}" />
+									</Column>									
+									<Column minScreenWidth="10em" demandPopin="true">
+										<Text text="{sos>id_defender} {sos>id_survived}" />
+									</Column>
+								</columns>
+
+								<items>
+									<ColumnListItem>
+										<cells>
+											<Text text="{sos>troop_type_infantry_name}" />
+											<ObjectStatus text="{path:'result>/result/1/startInf', type:'sap.ui.model.type.Integer', formatOptions:{groupingEnabled:true}} ({=Math.round(${result>/result/1/startInf}*100/(${result>/result/1/startInf}+${result>/result/1/startCav}+${result>/result/1/startRan})) }%)" inverted="false" state="None" />
+											<ObjectStatus text="{path:'result>/result/1/endInf', type:'sap.ui.model.type.Integer', formatOptions:{groupingEnabled:true}}" inverted="false" state="{= ${result>/result/1/startInf}===${result>/result/1/endInf} ? 'Success' : (${result>/result/1/endInf}===0 ? 'Error' : 'Warning') }" />
+											<ObjectStatus text="{path:'result>/result/2/startInf', type:'sap.ui.model.type.Integer', formatOptions:{groupingEnabled:true}} ({=Math.round(${result>/result/2/startInf}*100/(${result>/result/2/startInf}+${result>/result/2/startCav}+${result>/result/2/startRan})) }%)" inverted="false" state="None" />
+											<ObjectStatus text="{path:'result>/result/2/endInf', type:'sap.ui.model.type.Integer', formatOptions:{groupingEnabled:true}} " inverted="false" state="{= ${result>/result/2/startInf}===${result>/result/2/endInf} ? 'Success' : (${result>/result/2/endInf}===0 ? 'Error' : 'Warning') }" />
+										</cells>
+									</ColumnListItem>
+									<ColumnListItem>
+										<cells>
+											<Text text="{sos>troop_type_cavalry_name}" />
+											<ObjectStatus text="{path:'result>/result/1/startCav', type:'sap.ui.model.type.Integer', formatOptions:{groupingEnabled:true}} ({=Math.round(${result>/result/1/startCav}*100/(${result>/result/1/startInf}+${result>/result/1/startCav}+${result>/result/1/startRan})) }%)" inverted="false" state="None" />
+											<ObjectStatus text="{path:'result>/result/1/endCav', type:'sap.ui.model.type.Integer', formatOptions:{groupingEnabled:true}}" inverted="false" state="{= ${result>/result/1/startCav}===${result>/result/1/endCav} ? 'Success' : (${result>/result/1/endCav}===0 ? 'Error' : 'Warning') }" />
+											<ObjectStatus text="{path:'result>/result/2/startCav', type:'sap.ui.model.type.Integer', formatOptions:{groupingEnabled:true}} ({=Math.round(${result>/result/2/startCav}*100/(${result>/result/2/startInf}+${result>/result/2/startCav}+${result>/result/2/startRan})) }%)" inverted="false" state="None" />
+											<ObjectStatus text="{path:'result>/result/2/endCav', type:'sap.ui.model.type.Integer', formatOptions:{groupingEnabled:true}}" inverted="false" state="{= ${result>/result/2/startCav}===${result>/result/2/endCav} ? 'Success' : (${result>/result/2/endCav}===0 ? 'Error' : 'Warning') }" />
+										</cells>
+									</ColumnListItem>
+									<ColumnListItem>
+										<cells>
+											<Text text="{sos>troop_type_ranged_name}" />
+											<ObjectStatus text="{path:'result>/result/1/startRan', type:'sap.ui.model.type.Integer', formatOptions:{groupingEnabled:true}} ({=Math.round(${result>/result/1/startRan}*100/(${result>/result/1/startInf}+${result>/result/1/startCav}+${result>/result/1/startRan})) }%)" inverted="false" state="None" />
+											<ObjectStatus text="{path:'result>/result/1/endRan', type:'sap.ui.model.type.Integer', formatOptions:{groupingEnabled:true}}" inverted="false" state="{= ${result>/result/1/startRan}===${result>/result/1/endRan} ? 'Success' : (${result>/result/1/endRan}===0 ? 'Error' : 'Warning') }" />
+											<ObjectStatus text="{path:'result>/result/2/startRan', type:'sap.ui.model.type.Integer', formatOptions:{groupingEnabled:true}} ({=Math.round(${result>/result/2/startRan}*100/(${result>/result/2/startInf}+${result>/result/2/startCav}+${result>/result/2/startRan})) }%)" inverted="false" state="None" />
+											<ObjectStatus text="{path:'result>/result/2/endRan', type:'sap.ui.model.type.Integer', formatOptions:{groupingEnabled:true}}" inverted="false" state="{= ${result>/result/2/startRan}===${result>/result/2/endRan} ? 'Success' : (${result>/result/2/endRan}===0 ? 'Error' : 'Warning') }" />
+										</cells>
+									</ColumnListItem>
+								</items>
+							</Table>
+						</Panel>
+
+						<Panel expandable="true" expanded="true" headerText="{sos>id_graphics}" width="auto">
+							<viz:VizFrame id="vizAttacker" uiConfig="{applicationSet:'fiori'}" height="25rem" width="100%" vizType='area'>
+								<viz:dataset>
+									<viz.data:FlattenedDataset data="{result>/attacker/round}">
+										<viz.data:dimensions>
+											<viz.data:DimensionDefinition name="Rounds" value="{result>INFANTRY/round}" />
+										</viz.data:dimensions>
+										<viz.data:measures>
+											<viz.data:MeasureDefinition name="{sos>survivor_tag_infantry}" value="{result>INFANTRY/nbUnit}" />
+											<viz.data:MeasureDefinition name="{sos>survivor_tag_cavalry}" value="{result>CAVALRY/nbUnit}" />
+											<viz.data:MeasureDefinition name="{sos>survivor_tag_ranged}" value="{result>RANGED/nbUnit}" />
+										</viz.data:measures>
+									</viz.data:FlattenedDataset>
+								</viz:dataset>
+
+								<viz:feeds>
+									<viz.feeds:FeedItem uid="valueAxis" type="Measure" values="{=[${sos>survivor_tag_infantry},${sos>survivor_tag_cavalry},${sos>survivor_tag_ranged}]}" />
+									<viz.feeds:FeedItem uid="categoryAxis" type="Dimension" values="Rounds" />
+								</viz:feeds>
+							</viz:VizFrame>
+
+							<viz:VizFrame id="vizDefender" uiConfig="{applicationSet:'fiori'}" height="25rem" width="100%" vizType='area'>
+								<viz:dataset>
+									<viz.data:FlattenedDataset data="{result>/attacked/round}">
+										<viz.data:dimensions>
+											<viz.data:DimensionDefinition name="Rounds" value="{result>INFANTRY/round}" />
+										</viz.data:dimensions>
+										<viz.data:measures>
+											<viz.data:MeasureDefinition name="{sos>survivor_tag_infantry}" value="{result>INFANTRY/nbUnit}" />
+											<viz.data:MeasureDefinition name="{sos>survivor_tag_cavalry}" value="{result>CAVALRY/nbUnit}" />
+											<viz.data:MeasureDefinition name="{sos>survivor_tag_ranged}" value="{result>RANGED/nbUnit}" />
+										</viz.data:measures>
+									</viz.data:FlattenedDataset>
+								</viz:dataset>
+
+								<viz:feeds>
+									<viz.feeds:FeedItem uid="valueAxis" type="Measure" values="{=[${sos>survivor_tag_infantry},${sos>survivor_tag_cavalry},${sos>survivor_tag_ranged}]}" />
+									<viz.feeds:FeedItem uid="categoryAxis" type="Dimension" values="Rounds" />
+								</viz:feeds>
+							</viz:VizFrame>
+
+						</Panel>
+					</IconTabFilter>
+
+				</items>
+			</IconTabBar>
+		</content>
+		<footer>
+			<OverflowToolbar>
+				<ToolbarSpacer />
+				<Button visible="true" text="{sos>id_rank_up}" enabled="true" type="Emphasized" icon="sap-icon://activate" press="onOptimize" />
+				<Button visible="true" text="{sos>id_battle}" enabled="true" type="Emphasized" icon="sap-icon://action-settings" press="onBattle" />
+				<Button text="{i18n>common.import}" type="Accept" icon="sap-icon://upload" press="onImport" visible="{user>/roles/ADMIN}" />
+				<Button text="{i18n>common.exportExcel}" type="Accept" icon="sap-icon://excel-attachment" press="onExport" visible="{user>/roles/ADMIN}" />
+			</OverflowToolbar>
+		</footer>
+	</Page>
+</mvc:View>

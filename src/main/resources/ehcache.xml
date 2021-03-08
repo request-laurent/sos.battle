@@ -1,0 +1,4 @@
+<ehcache updateCheck="false">
+	<defaultCache maxElementsInMemory="10000" eternal="false" statistics="true" timeToIdleSeconds="0" timeToLiveSeconds="0" overflowToDisk="false" diskPersistent="false"
+		memoryStoreEvictionPolicy="LRU" />
+</ehcache>

@@ -1,0 +1,24 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:u="sap.ui.unified" xmlns:core="sap.ui.core">
+	<Dialog title="{sos>id_skills}">
+		<content>
+			<l:VerticalLayout class="sapUiResponsiveContentPadding">
+
+				<f:SimpleForm editable="true" layout="ResponsiveGridLayout" columnsXL="3" columnsL="3" columnsM="3">
+					<Label text="{sos>id_hero}" required="true" />
+					<ComboBox items="{path:'survivors>/', templateShareable:true}" selectedKey="{survivor>/id}" width="100%" valueState="{= ${survivor>/id} ? 'None' : 'Error' }" selectionChange="heroChange">
+						<core:Item key="{survivors>hero}" text="{survivors>name}" />
+					</ComboBox>
+
+					<Label text="{sos>id_skills} 1" />
+					<ComboBox items="{path:'skills1>/', templateShareable:true}" selectedKey="{hero>/skills/0}" width="100%" showSecondaryValues="false" enabled="{= !!${survivor>/id}}">
+						<core:ListItem key="{skills1>id}" text="{skills1>lvl}- {skills1>name}" />
+					</ComboBox>
+				</f:SimpleForm>
+			</l:VerticalLayout>
+		</content>
+		<buttons>
+			<Button visible="true" text="{i18n>common.submit}" enabled="true" type="Accept" icon="sap-icon://accept" press="onValidate" />
+			<Button visible="true" text="{i18n>common.cancel}" enabled="true" type="Reject" icon="sap-icon://cancel" press="onReject" />
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

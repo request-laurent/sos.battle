@@ -1,0 +1,46 @@
+<mvc:View controllerName="com.sos.ui5.battle.controller.admin.UserList" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:t="sap.ui.table">
+	<Page title="{i18n>page.UserList.title}" showNavButton="true" navButtonPress="onNavBack">
+		<content>
+			<t:Table rows="{/}" selectionMode="Single" selectionBehavior="RowOnly" rowActionCount="2" visibleRowCountMode="Auto" rowSelectionChange="onSelect">
+				<t:columns>
+					<t:Column sortProperty="code" filterProperty="code" width="20rem">
+						<Label text="{i18n>data.user.code}" />
+						<t:template>
+							<Text text="{code}" wrapping="false" />
+						</t:template>
+					</t:Column>
+					<t:Column sortProperty="name" filterProperty="name" width="20rem">
+						<Label text="{i18n>data.user.name}" />
+						<t:template>
+							<Text text="{name}" wrapping="false" />
+						</t:template>
+					</t:Column>
+					<t:Column sortProperty="group/name" filterProperty="group/name" autoResizable="true" width="100%">
+						<Label text="{i18n>data.user.group}" />
+						<t:template>
+							<Text text="{group/name}" wrapping="false" />
+						</t:template>
+					</t:Column>
+					<t:Column sortProperty="cpt" filterProperty="cpt" width="20rem">
+						<Label text="{i18n>data.user.cpt}" />
+						<t:template>
+							<Text text="{cpt}" wrapping="false" />
+						</t:template>
+					</t:Column>
+				</t:columns>
+				<t:rowActionTemplate>
+					<t:RowAction>
+						<t:RowActionItem press="onDelete" type="Delete" icon="sap-icon://delete" />
+						<t:RowActionItem press="onSelect" type="Navigation" icon="sap-icon://feeder-arrow" />
+					</t:RowAction>
+				</t:rowActionTemplate>
+			</t:Table>
+		</content>
+		<footer>
+			<OverflowToolbar>
+				<ToolbarSpacer />
+				<Button visible="true" text="{i18n>common.add}" enabled="true" type="Emphasized" icon="sap-icon://add" press="onAdd" />
+			</OverflowToolbar>
+		</footer>
+	</Page>
+</mvc:View>

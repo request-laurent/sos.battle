@@ -1,0 +1,19 @@
+<mvc:View controllerName="com.sos.ui5.battle.controller.Login" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc">
+	<App id="mainContents" backgroundImage="img/illustration.jpg">
+		<pages>
+			<Page showHeader="false" backgroundDesign="Transparent">
+				<Dialog id="dialog" title="{i18n>app.title}" icon="sap-icon://key" type="Message">
+					<content>
+						<VBox>
+							<Text wrapping="true" text="{i18n>app.intro}" />
+							<Text wrapping="true" text=" " />
+							<HBox justifyContent="Center">
+								<Image src="img/Discord_signin.png" densityAware="false" press="onOpenId" height="5em" />
+							</HBox>
+						</VBox>
+					</content>
+				</Dialog>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

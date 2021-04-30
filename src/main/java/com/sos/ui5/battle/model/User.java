@@ -136,12 +136,16 @@ public class User implements Serializable {
 	}
 
 	public static void addCpt() throws Exception {
-		EMUtils.call(em -> {
-			User user = UserService.getUser();
-			user = em.find(User.class, user.getId());
-			user.setCpt((user.getCpt() == null ? 0 : user.getCpt()) + 1);
-			return null;
-		});
+		try {
+			EMUtils.call(em -> {
+				User user = UserService.getUser();
+				user = em.find(User.class, user.getId());
+				user.setCpt((user.getCpt() == null ? 0 : user.getCpt()) + 1);
+				return null;
+			});
+		} catch (Exception ex) {
+			// No error is no database
+		}
 	}
 
 }

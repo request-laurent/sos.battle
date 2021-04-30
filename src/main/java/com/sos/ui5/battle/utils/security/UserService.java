@@ -75,29 +75,44 @@ public class UserService {
 	 * @throws Exception
 	 */
 	public static boolean loginOAuth(String mail, String name, String avatar) throws Exception {
-		return EMUtils.call(em -> {
-			TypedQuery<User> query = em.createQuery("select o from User o join fetch o.group where o.code=:code", User.class);
-			List<User> lst = query.setParameter("code", mail).getResultList();
-			if (lst.size() == 0) {
-				if ("true".equals(Parameter.get(ParameterKey.AUTO_CREATE_DISCORD))) {
-					User user = new User();
-					user.setCode(mail);
-					user.setName(name);
-					user.setGroup(em.find(Groups.class, 2l));
-					user.setAvatar(avatar);
-					em.persist(user);
-					UserService.setUser(user);
+		try {
+			return EMUtils.call(em -> {
+				TypedQuery<User> query = em.createQuery("select o from User o join fetch o.group where o.code=:code",
+						User.class);
+				List<User> lst = query.setParameter("code", mail).getResultList();
+				if (lst.size() == 0) {
+					if ("true".equals(Parameter.get(ParameterKey.AUTO_CREATE_DISCORD))) {
+						User user = new User();
+						user.setCode(mail);
+						user.setName(name);
+						user.setGroup(em.find(Groups.class, 2l));
+						user.setAvatar(avatar);
+						em.persist(user);
+						UserService.setUser(user);
+					} else {
+						return false;
+					}
+					return true;
 				} else {
-					return false;
+					User user = lst.get(0);
+					user.setAvatar(avatar);
+					UserService.setUser(user);
+					return true;
 				}
-				return true;
-			} else {
-				User user = lst.get(0);
-				user.setAvatar(avatar);
-				UserService.setUser(user);
-				return true;
-			}
-		});
+			});
+		} catch (Exception ex) {
+			//No database, we force the access
+			User user = new User();
+			user.setCode(mail);
+			user.setName(name);
+			Groups group = new Groups();
+			group.setName("user");
+			group.setRoles(Role.user+","+Role.battle);
+			user.setGroup(group);
+			user.setAvatar(avatar);
+			UserService.setUser(user);
+			return true;
+		}
 	}
 
 	/**

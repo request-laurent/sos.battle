@@ -1,4 +1,5 @@
 # State Of Survival Battle simulator
+------
 
 Hi survivors !
 
@@ -17,9 +18,35 @@ More information on simulator here : https://en.ultimate-guide.ovh/fights/battle
 ![image](https://user-images.githubusercontent.com/80217596/110250726-20a11800-7f7d-11eb-9b53-6a6e2d6382ed.png)
 
 # Online Simulator
+------
 The link to access to the simulator : https://battle.ultimate-guide.ovh/battle/ 
 
 Use your discord account to login. This allows you to have your environment with your configurations.
 
 On a mobile phone, you can add it to the desktop to have it as an application.
 
+# Build & run
+------
+
+This projet a maven Project, you can also import the project in Eclipse or your favorit java editor.
+The battle engine use a mysql database for load & save your configurations, but you can run the app wihtout it. Configure your database in persistence.xml file, the tables are automaitcly created. 
+
+For maven standalone build & run : 
+
+__Step 1: Install Java JDK 8+ and Maven__
+
+[Java JDK 8+](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html)
+
+[Maven](http://maven.apache.org/download.html)
+
+__Step 2: Run__
+
+		mvn tomcat7:run
+
+__Step 3: Use your web browser__
+
+[http://localhost:8080/sos.battle/](http://localhost:8080/sos.battle/)
+
+__Step 4: Optional : If you whant install on a web server => use the war file__
+
+		mvn clean install

@@ -20,7 +20,9 @@
             300014,
             300523,
             300541,
-            300760
+            300760,
+            301116,
+            301101
         ],
         "OppPercentParam":[
             300086,
@@ -69,7 +71,9 @@
             300016,
             300524,
             300542,
-            300761
+            300761,
+            301117,
+            301103
         ],
         "OppPercentParam":[
             300088,
@@ -118,7 +122,9 @@
             300018,
             300525,
             300543,
-            300762
+            300762,
+            301118,
+            301105
         ],
         "OppPercentParam":[
             300090,
@@ -167,7 +173,9 @@
             300020,
             300526,
             300544,
-            300763
+            300763,
+            301119,
+            301107
         ],
         "OppPercentParam":[
             300092,
@@ -314,7 +322,9 @@
             300014,
             300523,
             300541,
-            300760
+            300760,
+            301116,
+            301101
         ],
         "OppPercentParam":[
             300086,
@@ -363,7 +373,9 @@
             300016,
             300524,
             300542,
-            300761
+            300761,
+            301117,
+            301103
         ],
         "OppPercentParam":[
             300088,
@@ -412,7 +424,9 @@
             300018,
             300525,
             300543,
-            300762
+            300762,
+            301118,
+            301105
         ],
         "OppPercentParam":[
             300090,
@@ -461,7 +475,9 @@
             300020,
             300526,
             300544,
-            300763
+            300763,
+            301119,
+            301107
         ],
         "OppPercentParam":[
             300092,
@@ -608,7 +624,9 @@
             300026,
             300529,
             300547,
-            300766
+            300766,
+            301116,
+            301101
         ],
         "OppPercentParam":[
             300086,
@@ -657,7 +675,9 @@
             300028,
             300530,
             300548,
-            300767
+            300767,
+            301117,
+            301103
         ],
         "OppPercentParam":[
             300088,
@@ -706,7 +726,9 @@
             300030,
             300531,
             300549,
-            300768
+            300768,
+            301118,
+            301105
         ],
         "OppPercentParam":[
             300090,
@@ -755,7 +777,9 @@
             300032,
             300532,
             300550,
-            300769
+            300769,
+            301119,
+            301107
         ],
         "OppPercentParam":[
             300092,
@@ -902,7 +926,9 @@
             300026,
             300529,
             300547,
-            300766
+            300766,
+            301116,
+            301101
         ],
         "OppPercentParam":[
             300086,
@@ -951,7 +977,9 @@
             300028,
             300530,
             300548,
-            300767
+            300767,
+            301117,
+            301103
         ],
         "OppPercentParam":[
             300088,
@@ -1000,7 +1028,9 @@
             300030,
             300531,
             300549,
-            300768
+            300768,
+            301118,
+            301105
         ],
         "OppPercentParam":[
             300090,
@@ -1049,7 +1079,9 @@
             300032,
             300532,
             300550,
-            300769
+            300769,
+            301119,
+            301107
         ],
         "OppPercentParam":[
             300092,
@@ -1196,7 +1228,9 @@
             300038,
             300535,
             300553,
-            300772
+            300772,
+            301116,
+            301101
         ],
         "OppPercentParam":[
             300086,
@@ -1245,7 +1279,9 @@
             300040,
             300536,
             300554,
-            300773
+            300773,
+            301117,
+            301103
         ],
         "OppPercentParam":[
             300088,
@@ -1294,7 +1330,9 @@
             300042,
             300537,
             300555,
-            300774
+            300774,
+            301118,
+            301105
         ],
         "OppPercentParam":[
             300090,
@@ -1343,7 +1381,9 @@
             300044,
             300538,
             300556,
-            300775
+            300775,
+            301119,
+            301107
         ],
         "OppPercentParam":[
             300092,
@@ -1490,7 +1530,9 @@
             300038,
             300535,
             300553,
-            300772
+            300772,
+            301116,
+            301101
         ],
         "OppPercentParam":[
             300086,
@@ -1539,7 +1581,9 @@
             300040,
             300536,
             300554,
-            300773
+            300773,
+            301117,
+            301103
         ],
         "OppPercentParam":[
             300088,
@@ -1588,7 +1632,9 @@
             300042,
             300537,
             300555,
-            300774
+            300774,
+            301118,
+            301105
         ],
         "OppPercentParam":[
             300090,
@@ -1637,7 +1683,9 @@
             300044,
             300538,
             300556,
-            300775
+            300775,
+            301119,
+            301107
         ],
         "OppPercentParam":[
             300092,
@@ -5794,6 +5842,29 @@
         "ConstantParam":0
     },
     {
+        "InternalId":400330,
+        "Id":"calc_alliance_mines_fund_production",
+        "Formula":1,
+        "BaseBenefit":301083,
+        "PercentParam":[
+            301084
+        ],
+        "OppPercentParam":[
+        ],
+        "ValueParam":[
+        ],
+        "OppValueParam":[
+        ],
+        "IncreaseParam":[
+        ],
+        "OppIncreaseParam":[
+        ],
+        "ResultDataType":"int_down",
+        "Minimum":0,
+        "Maximum":1.0E+12,
+        "ConstantParam":0
+    },
+    {
         "InternalId":400312,
         "Id":"calc_alliance_mines_gas_production",
         "Formula":1,
@@ -5846,29 +5917,6 @@
         "BaseBenefit":301045,
         "PercentParam":[
             301046
-        ],
-        "OppPercentParam":[
-        ],
-        "ValueParam":[
-        ],
-        "OppValueParam":[
-        ],
-        "IncreaseParam":[
-        ],
-        "OppIncreaseParam":[
-        ],
-        "ResultDataType":"int_down",
-        "Minimum":0,
-        "Maximum":1.0E+12,
-        "ConstantParam":0
-    },
-    {
-        "InternalId":400330,
-        "Id":"calc_alliance_mines_fund_production",
-        "Formula":1,
-        "BaseBenefit":301083,
-        "PercentParam":[
-            301084
         ],
         "OppPercentParam":[
         ],
@@ -6028,6 +6076,7 @@
         "Formula":1,
         "BaseBenefit":300361,
         "PercentParam":[
+            301114
         ],
         "OppPercentParam":[
         ],
@@ -7432,6 +7481,29 @@
         "ConstantParam":0
     },
     {
+        "InternalId":400329,
+        "Id":"calc_alliance_storehouse_fund_capacity",
+        "Formula":1,
+        "BaseBenefit":301081,
+        "PercentParam":[
+            301067
+        ],
+        "OppPercentParam":[
+        ],
+        "ValueParam":[
+        ],
+        "OppValueParam":[
+        ],
+        "IncreaseParam":[
+        ],
+        "OppIncreaseParam":[
+        ],
+        "ResultDataType":"int_down",
+        "Minimum":0,
+        "Maximum":1.0E+12,
+        "ConstantParam":0
+    },
+    {
         "InternalId":400319,
         "Id":"calc_alliance_storehouse_gas_capacity",
         "Formula":1,
@@ -7482,29 +7554,6 @@
         "Id":"calc_alliance_storehouse_wood_capacity",
         "Formula":1,
         "BaseBenefit":301059,
-        "PercentParam":[
-            301067
-        ],
-        "OppPercentParam":[
-        ],
-        "ValueParam":[
-        ],
-        "OppValueParam":[
-        ],
-        "IncreaseParam":[
-        ],
-        "OppIncreaseParam":[
-        ],
-        "ResultDataType":"int_down",
-        "Minimum":0,
-        "Maximum":1.0E+12,
-        "ConstantParam":0
-    },
-    {
-        "InternalId":400329,
-        "Id":"calc_alliance_storehouse_fund_capacity",
-        "Formula":1,
-        "BaseBenefit":301081,
         "PercentParam":[
             301067
         ],
@@ -9257,6 +9306,335 @@
         "ResultDataType":"int_down",
         "Minimum":0,
         "Maximum":1.0E+12,
+        "ConstantParam":0
+    },
+    {
+        "InternalId":400331,
+        "Id":"calc_season_treasure_score_gain_rate",
+        "Formula":1,
+        "BaseBenefit":301085,
+        "PercentParam":[
+            301092,
+            301099
+        ],
+        "OppPercentParam":[
+        ],
+        "ValueParam":[
+        ],
+        "OppValueParam":[
+        ],
+        "IncreaseParam":[
+        ],
+        "OppIncreaseParam":[
+        ],
+        "ResultDataType":"int_up",
+        "Minimum":0,
+        "Maximum":99999999,
+        "ConstantParam":0
+    },
+    {
+        "InternalId":400332,
+        "Id":"calc_season_climb_tower_score_gain_rate",
+        "Formula":1,
+        "BaseBenefit":301086,
+        "PercentParam":[
+            301093,
+            301099
+        ],
+        "OppPercentParam":[
+        ],
+        "ValueParam":[
+        ],
+        "OppValueParam":[
+        ],
+        "IncreaseParam":[
+        ],
+        "OppIncreaseParam":[
+        ],
+        "ResultDataType":"int_up",
+        "Minimum":0,
+        "Maximum":99999999,
+        "ConstantParam":0
+    },
+    {
+        "InternalId":400333,
+        "Id":"calc_season_intel_score_gain_rate",
+        "Formula":1,
+        "BaseBenefit":301087,
+        "PercentParam":[
+            301094,
+            301099
+        ],
+        "OppPercentParam":[
+        ],
+        "ValueParam":[
+        ],
+        "OppValueParam":[
+        ],
+        "IncreaseParam":[
+        ],
+        "OppIncreaseParam":[
+        ],
+        "ResultDataType":"int_up",
+        "Minimum":0,
+        "Maximum":99999999,
+        "ConstantParam":0
+    },
+    {
+        "InternalId":400334,
+        "Id":"calc_season_ava_score_gain_rate",
+        "Formula":1,
+        "BaseBenefit":301088,
+        "PercentParam":[
+            301095,
+            301099
+        ],
+        "OppPercentParam":[
+        ],
+        "ValueParam":[
+        ],
+        "OppValueParam":[
+        ],
+        "IncreaseParam":[
+        ],
+        "OppIncreaseParam":[
+        ],
+        "ResultDataType":"int_up",
+        "Minimum":0,
+        "Maximum":99999999,
+        "ConstantParam":0
+    },
+    {
+        "InternalId":400335,
+        "Id":"calc_season_kvk_score_gain_rate",
+        "Formula":1,
+        "BaseBenefit":301089,
+        "PercentParam":[
+            301096,
+            301099
+        ],
+        "OppPercentParam":[
+        ],
+        "ValueParam":[
+        ],
+        "OppValueParam":[
+        ],
+        "IncreaseParam":[
+        ],
+        "OppIncreaseParam":[
+        ],
+        "ResultDataType":"int_up",
+        "Minimum":0,
+        "Maximum":99999999,
+        "ConstantParam":0
+    },
+    {
+        "InternalId":400336,
+        "Id":"calc_season_treasure_stamina_recover_speed",
+        "Formula":2,
+        "BaseBenefit":301090,
+        "PercentParam":[
+            301097
+        ],
+        "OppPercentParam":[
+        ],
+        "ValueParam":[
+        ],
+        "OppValueParam":[
+        ],
+        "IncreaseParam":[
+        ],
+        "OppIncreaseParam":[
+        ],
+        "ResultDataType":"int_up",
+        "Minimum":0,
+        "Maximum":99999999,
+        "ConstantParam":0
+    },
+    {
+        "InternalId":400337,
+        "Id":"calc_season_treasure_second_cut",
+        "Formula":2,
+        "BaseBenefit":301091,
+        "PercentParam":[
+            301098
+        ],
+        "OppPercentParam":[
+        ],
+        "ValueParam":[
+        ],
+        "OppValueParam":[
+        ],
+        "IncreaseParam":[
+        ],
+        "OppIncreaseParam":[
+        ],
+        "ResultDataType":"int_up",
+        "Minimum":0,
+        "Maximum":99999999,
+        "ConstantParam":0
+    },
+    {
+        "InternalId":400342,
+        "Id":"calc_throne_rally_march_speed",
+        "Formula":1,
+        "BaseBenefit":0,
+        "PercentParam":[
+            301120
+        ],
+        "OppPercentParam":[
+        ],
+        "ValueParam":[
+        ],
+        "OppValueParam":[
+        ],
+        "IncreaseParam":[
+        ],
+        "OppIncreaseParam":[
+        ],
+        "ResultDataType":"float",
+        "Minimum":0,
+        "Maximum":99999999,
+        "ConstantParam":0
+    },
+    {
+        "InternalId":400339,
+        "Id":"calc_treasure_march_speed",
+        "Formula":1,
+        "BaseBenefit":0,
+        "PercentParam":[
+            301113
+        ],
+        "OppPercentParam":[
+        ],
+        "ValueParam":[
+        ],
+        "OppValueParam":[
+        ],
+        "IncreaseParam":[
+        ],
+        "OppIncreaseParam":[
+        ],
+        "ResultDataType":"float",
+        "Minimum":0,
+        "Maximum":99999999,
+        "ConstantParam":0
+    },
+    {
+        "InternalId":400340,
+        "Id":"calc_treasure_wounded_rate",
+        "Formula":1,
+        "BaseBenefit":301110,
+        "PercentParam":[
+            301114
+        ],
+        "OppPercentParam":[
+        ],
+        "ValueParam":[
+        ],
+        "OppValueParam":[
+        ],
+        "IncreaseParam":[
+        ],
+        "OppIncreaseParam":[
+        ],
+        "ResultDataType":"float",
+        "Minimum":0,
+        "Maximum":99999999,
+        "ConstantParam":0
+    },
+    {
+        "InternalId":400341,
+        "Id":"calc_intel_refresh_num",
+        "Formula":1,
+        "BaseBenefit":301111,
+        "PercentParam":[
+            301115
+        ],
+        "OppPercentParam":[
+        ],
+        "ValueParam":[
+        ],
+        "OppValueParam":[
+        ],
+        "IncreaseParam":[
+        ],
+        "OppIncreaseParam":[
+        ],
+        "ResultDataType":"int_down",
+        "Minimum":0,
+        "Maximum":99999999,
+        "ConstantParam":0
+    },
+    {
+        "InternalId":400343,
+        "Id":"calc_barricade_durability_damage",
+        "Formula":1,
+        "BaseBenefit":301122,
+        "PercentParam":[
+            301123
+        ],
+        "OppPercentParam":[
+        ],
+        "ValueParam":[
+            301124
+        ],
+        "OppValueParam":[
+        ],
+        "IncreaseParam":[
+        ],
+        "OppIncreaseParam":[
+        ],
+        "ResultDataType":"int_down",
+        "Minimum":0,
+        "Maximum":99999999,
+        "ConstantParam":0
+    },
+    {
+        "InternalId":400344,
+        "Id":"calc_siege_engine_speed",
+        "Formula":1,
+        "BaseBenefit":301125,
+        "PercentParam":[
+            301126
+        ],
+        "OppPercentParam":[
+        ],
+        "ValueParam":[
+        ],
+        "OppValueParam":[
+        ],
+        "IncreaseParam":[
+        ],
+        "OppIncreaseParam":[
+        ],
+        "ResultDataType":"float",
+        "Minimum":0,
+        "Maximum":99999999,
+        "ConstantParam":0
+    },
+    {
+        "InternalId":400345,
+        "Id":"calc_siege_engine_skill_cd",
+        "Formula":2,
+        "BaseBenefit":301127,
+        "PercentParam":[
+            301128
+        ],
+        "OppPercentParam":[
+        ],
+        "ValueParam":[
+            301131
+        ],
+        "OppValueParam":[
+        ],
+        "IncreaseParam":[
+        ],
+        "OppIncreaseParam":[
+        ],
+        "ResultDataType":"int_down",
+        "Minimum":0,
+        "Maximum":99999999,
         "ConstantParam":0
     }
 ]

@@ -62,7 +62,8 @@
         "ClientVersion":"",
         "ReplaceSurvivor":0,
         "ChipNumberNew":{
-        }
+        },
+        "SeasonId":57100003
     },
     {
         "InternalId":25300014,
@@ -126,7 +127,8 @@
         "ClientVersion":"",
         "ReplaceSurvivor":0,
         "ChipNumberNew":{
-        }
+        },
+        "SeasonId":57100003
     },
     {
         "InternalId":25300015,
@@ -192,7 +194,8 @@
         "ClientVersion":"",
         "ReplaceSurvivor":0,
         "ChipNumberNew":{
-        }
+        },
+        "SeasonId":57100003
     },
     {
         "InternalId":25300005,
@@ -256,7 +259,8 @@
         "ClientVersion":"",
         "ReplaceSurvivor":0,
         "ChipNumberNew":{
-        }
+        },
+        "SeasonId":57100003
     },
     {
         "InternalId":25300006,
@@ -320,7 +324,8 @@
         "ClientVersion":"",
         "ReplaceSurvivor":0,
         "ChipNumberNew":{
-        }
+        },
+        "SeasonId":57100003
     },
     {
         "InternalId":25300032,
@@ -556,7 +561,8 @@
         "ReplaceSurvivor":25300046,
         "ChipNumberNew":{
             "202700":10
-        }
+        },
+        "SeasonId":57100003
     },
     {
         "InternalId":25300021,
@@ -621,7 +627,8 @@
         "ClientVersion":"",
         "ReplaceSurvivor":0,
         "ChipNumberNew":{
-        }
+        },
+        "SeasonId":57100003
     },
     {
         "InternalId":25300007,
@@ -685,7 +692,8 @@
         "ClientVersion":"",
         "ReplaceSurvivor":0,
         "ChipNumberNew":{
-        }
+        },
+        "SeasonId":57100003
     },
     {
         "InternalId":25300008,
@@ -751,7 +759,8 @@
         "ClientVersion":"",
         "ReplaceSurvivor":0,
         "ChipNumberNew":{
-        }
+        },
+        "SeasonId":57100003
     },
     {
         "InternalId":25300085,
@@ -805,7 +814,7 @@
         ],
         "SurvivorCommonChip":202060,
         "DisplacementParam":1,
-        "WhatWeek":33,
+        "WhatWeek":0,
         "WhatDay":0,
         "Spine":"character_npc_female_roxy_fullbody",
         "SurvivorGeneration":3,
@@ -816,7 +825,8 @@
         "ClientVersion":"v1.9.70",
         "ReplaceSurvivor":0,
         "ChipNumberNew":{
-        }
+        },
+        "SeasonId":57100007
     },
     {
         "InternalId":25300009,
@@ -881,7 +891,8 @@
         "ClientVersion":"",
         "ReplaceSurvivor":0,
         "ChipNumberNew":{
-        }
+        },
+        "SeasonId":57100003
     },
     {
         "InternalId":25300010,
@@ -946,7 +957,8 @@
         "ClientVersion":"",
         "ReplaceSurvivor":0,
         "ChipNumberNew":{
-        }
+        },
+        "SeasonId":57100003
     },
     {
         "InternalId":25300016,
@@ -1010,7 +1022,8 @@
         "ClientVersion":"",
         "ReplaceSurvivor":0,
         "ChipNumberNew":{
-        }
+        },
+        "SeasonId":57100003
     },
     {
         "InternalId":25300012,
@@ -1074,7 +1087,8 @@
         "ClientVersion":"",
         "ReplaceSurvivor":0,
         "ChipNumberNew":{
-        }
+        },
+        "SeasonId":57100003
     },
     {
         "InternalId":25300017,
@@ -1127,7 +1141,8 @@
         "ClientVersion":"",
         "ReplaceSurvivor":0,
         "ChipNumberNew":{
-        }
+        },
+        "SeasonId":0
     },
     {
         "InternalId":25300083,
@@ -1181,7 +1196,7 @@
         ],
         "SurvivorCommonChip":202060,
         "DisplacementParam":1,
-        "WhatWeek":33,
+        "WhatWeek":0,
         "WhatDay":0,
         "Spine":"character_npc_male_emma_fullbody",
         "SurvivorGeneration":3,
@@ -1192,7 +1207,8 @@
         "ClientVersion":"v1.9.70",
         "ReplaceSurvivor":0,
         "ChipNumberNew":{
-        }
+        },
+        "SeasonId":57100007
     },
     {
         "InternalId":25300031,
@@ -1246,7 +1262,7 @@
         ],
         "SurvivorCommonChip":202060,
         "DisplacementParam":1,
-        "WhatWeek":23,
+        "WhatWeek":0,
         "WhatDay":1,
         "Spine":"character_npc_male_ernie_fullbody",
         "SurvivorGeneration":1,
@@ -1428,7 +1444,8 @@
         "ReplaceSurvivor":25300037,
         "ChipNumberNew":{
             "202697":10
-        }
+        },
+        "SeasonId":57100003
     },
     {
         "InternalId":25300043,
@@ -1492,7 +1509,8 @@
         "ClientVersion":"",
         "ReplaceSurvivor":0,
         "ChipNumberNew":{
-        }
+        },
+        "SeasonId":57100003
     },
     {
         "InternalId":25300018,
@@ -1545,7 +1563,8 @@
         "ClientVersion":"",
         "ReplaceSurvivor":0,
         "ChipNumberNew":{
-        }
+        },
+        "SeasonId":0
     },
     {
         "InternalId":25300019,
@@ -1609,7 +1628,8 @@
         "ClientVersion":"",
         "ReplaceSurvivor":0,
         "ChipNumberNew":{
-        }
+        },
+        "SeasonId":57100003
     },
     {
         "InternalId":25300022,
@@ -1674,7 +1694,8 @@
         "ClientVersion":"",
         "ReplaceSurvivor":0,
         "ChipNumberNew":{
-        }
+        },
+        "SeasonId":57100003
     },
     {
         "InternalId":25300084,
@@ -1739,7 +1760,8 @@
         "ClientVersion":"v1.9.70",
         "ReplaceSurvivor":0,
         "ChipNumberNew":{
-        }
+        },
+        "SeasonId":57100003
     },
     {
         "InternalId":25300020,
@@ -1804,7 +1826,8 @@
         "ClientVersion":"",
         "ReplaceSurvivor":0,
         "ChipNumberNew":{
-        }
+        },
+        "SeasonId":57100003
     },
     {
         "InternalId":25300033,
@@ -1859,7 +1882,7 @@
         ],
         "SurvivorCommonChip":202060,
         "DisplacementParam":1,
-        "WhatWeek":23,
+        "WhatWeek":0,
         "WhatDay":1,
         "Spine":"character_npc_male_zach_fullbody",
         "SurvivorGeneration":1,
@@ -2041,7 +2064,8 @@
         "ReplaceSurvivor":25300045,
         "ChipNumberNew":{
             "202699":10
-        }
+        },
+        "SeasonId":57100003
     },
     {
         "InternalId":25300027,
@@ -2105,7 +2129,8 @@
         "ClientVersion":"",
         "ReplaceSurvivor":0,
         "ChipNumberNew":{
-        }
+        },
+        "SeasonId":57100003
     },
     {
         "InternalId":25300028,
@@ -2159,7 +2184,7 @@
         ],
         "SurvivorCommonChip":202060,
         "DisplacementParam":1,
-        "WhatWeek":13,
+        "WhatWeek":0,
         "WhatDay":1,
         "Spine":"character_npc_female_ash_fullbody",
         "SurvivorGeneration":0,
@@ -2170,7 +2195,8 @@
         "ClientVersion":"",
         "ReplaceSurvivor":0,
         "ChipNumberNew":{
-        }
+        },
+        "SeasonId":57100004
     },
     {
         "InternalId":25300029,
@@ -2224,7 +2250,7 @@
         ],
         "SurvivorCommonChip":202060,
         "DisplacementParam":1,
-        "WhatWeek":13,
+        "WhatWeek":0,
         "WhatDay":1,
         "Spine":"character_npc_female_zoe_fullbody",
         "SurvivorGeneration":0,
@@ -2235,7 +2261,8 @@
         "ClientVersion":"",
         "ReplaceSurvivor":0,
         "ChipNumberNew":{
-        }
+        },
+        "SeasonId":57100004
     },
     {
         "InternalId":25300030,
@@ -2289,7 +2316,7 @@
         ],
         "SurvivorCommonChip":202060,
         "DisplacementParam":1,
-        "WhatWeek":13,
+        "WhatWeek":0,
         "WhatDay":1,
         "Spine":"character_npc_female_miho_fullbody",
         "SurvivorGeneration":0,
@@ -2300,7 +2327,8 @@
         "ClientVersion":"",
         "ReplaceSurvivor":0,
         "ChipNumberNew":{
-        }
+        },
+        "SeasonId":57100004
     },
     {
         "InternalId":25300034,
@@ -2354,7 +2382,8 @@
         "ClientVersion":"",
         "ReplaceSurvivor":0,
         "ChipNumberNew":{
-        }
+        },
+        "SeasonId":0
     },
     {
         "InternalId":25300035,
@@ -2408,7 +2437,8 @@
         "ClientVersion":"",
         "ReplaceSurvivor":0,
         "ChipNumberNew":{
-        }
+        },
+        "SeasonId":0
     },
     {
         "InternalId":25300036,
@@ -2462,7 +2492,8 @@
         "ClientVersion":"",
         "ReplaceSurvivor":0,
         "ChipNumberNew":{
-        }
+        },
+        "SeasonId":0
     },
     {
         "InternalId":25300038,
@@ -2526,7 +2557,8 @@
         "ClientVersion":"1.8.70",
         "ReplaceSurvivor":0,
         "ChipNumberNew":{
-        }
+        },
+        "SeasonId":57100003
     },
     {
         "InternalId":25300040,
@@ -2591,7 +2623,8 @@
         "ClientVersion":"1.8.60",
         "ReplaceSurvivor":0,
         "ChipNumberNew":{
-        }
+        },
+        "SeasonId":57100003
     },
     {
         "InternalId":25300041,
@@ -2618,11 +2651,8 @@
         "Priority":30,
         "Ai":"common_player",
         "ProfessionTag":[
-            27500003,
-            27500008,
-            27500013
         ],
-        "SurvivorScene":"survivor_preview_scene_becca",
+        "SurvivorScene":"",
         "UiPreview_3d":"preview_survivor_becca",
         "Tags":[
             "hero"
@@ -2649,14 +2679,15 @@
         "WhatDay":8,
         "Spine":"character_npc_female_becca_fullbody",
         "SurvivorGeneration":0,
-        "RelatedSurvivor":1,
+        "RelatedSurvivor":0,
         "Backgroup":"survivor_preview_scene_becca",
         "ServerList":[
         ],
         "ClientVersion":"",
         "ReplaceSurvivor":0,
         "ChipNumberNew":{
-        }
+        },
+        "SeasonId":57100003
     },
     {
         "InternalId":25300037,
@@ -2722,7 +2753,8 @@
         "ReplaceSurvivor":25300031,
         "ChipNumberNew":{
             "202697":10
-        }
+        },
+        "SeasonId":57100003
     },
     {
         "InternalId":25300046,
@@ -2790,7 +2822,8 @@
         "ReplaceSurvivor":25300032,
         "ChipNumberNew":{
             "202700":10
-        }
+        },
+        "SeasonId":57100003
     },
     {
         "InternalId":25300045,
@@ -2856,7 +2889,273 @@
         "ReplaceSurvivor":25300033,
         "ChipNumberNew":{
             "202699":10
-        }
+        },
+        "SeasonId":57100003
+    },
+    {
+        "InternalId":25300087,
+        "Id":"survivor_jess",
+        "Rarity":4,
+        "Type":1,
+        "Profession":"zealots",
+        "SpeedMove":5000,
+        "SkillConfig":{
+            "25400590":1,
+            "25400593":1,
+            "25400594":2,
+            "25400595":3
+        },
+        "ChipNumber":{
+            "203342":10
+        },
+        "Name":"survivor_jess_name",
+        "Art_3d":"model_survivor_jessica",
+        "Description":"survivor_jess_info",
+        "ImageBig":"",
+        "ImageSmall":"sp_avatar_survivor_jess",
+        "LordImage":2100037,
+        "Priority":37,
+        "Ai":"common_player",
+        "ProfessionTag":[
+            27500001,
+            27500007,
+            27500013
+        ],
+        "SurvivorScene":"",
+        "UiPreview_3d":"preview_survivor_jessica",
+        "Tags":[
+            "hero"
+        ],
+        "Pet":[
+        ],
+        "PetScope":0,
+        "PetValue":[
+        ],
+        "CircleSpeed":2,
+        "DefaultAvatar":0,
+        "IsLock":0,
+        "BroadcastType":1,
+        "RotateDegree":30,
+        "MinServerVersion":"",
+        "ExploreBenefitDisplay":[
+            "calc_survivor_hp",
+            "calc_survivor_atk",
+            "calc_survivor_def"
+        ],
+        "SurvivorCommonChip":202060,
+        "DisplacementParam":1,
+        "WhatWeek":0,
+        "WhatDay":0,
+        "Spine":"character_npc_female_jessica_fullbody",
+        "SurvivorGeneration":4,
+        "RelatedSurvivor":0,
+        "Backgroup":"survivor_preview_scene_street",
+        "ServerList":[
+        ],
+        "ClientVersion":"1.10.10",
+        "ReplaceSurvivor":0,
+        "ChipNumberNew":{
+        },
+        "SeasonId":57100008
+    },
+    {
+        "InternalId":25300088,
+        "Id":"survivor_luca",
+        "Rarity":4,
+        "Type":2,
+        "Profession":"sniper",
+        "SpeedMove":5000,
+        "SkillConfig":{
+            "25400591":1,
+            "25400596":1,
+            "25400597":2,
+            "25400598":3
+        },
+        "ChipNumber":{
+            "203346":10
+        },
+        "Name":"survivor_luca_name",
+        "Art_3d":"model_survivor_luca",
+        "Description":"survivor_luca_info",
+        "ImageBig":"",
+        "ImageSmall":"sp_avatar_survivor_luca",
+        "LordImage":2100038,
+        "Priority":38,
+        "Ai":"common_player",
+        "ProfessionTag":[
+            27500003,
+            27500008,
+            27500013
+        ],
+        "SurvivorScene":"",
+        "UiPreview_3d":"preview_survivor_luca",
+        "Tags":[
+            "hero"
+        ],
+        "Pet":[
+        ],
+        "PetScope":0,
+        "PetValue":[
+        ],
+        "CircleSpeed":2,
+        "DefaultAvatar":0,
+        "IsLock":0,
+        "BroadcastType":1,
+        "RotateDegree":30,
+        "MinServerVersion":"",
+        "ExploreBenefitDisplay":[
+            "calc_survivor_hp",
+            "calc_survivor_atk",
+            "calc_survivor_def"
+        ],
+        "SurvivorCommonChip":202060,
+        "DisplacementParam":1,
+        "WhatWeek":0,
+        "WhatDay":0,
+        "Spine":"character_npc_male_luca_fullbody",
+        "SurvivorGeneration":4,
+        "RelatedSurvivor":0,
+        "Backgroup":"survivor_preview_scene_street",
+        "ServerList":[
+        ],
+        "ClientVersion":"1.10.10",
+        "ReplaceSurvivor":0,
+        "ChipNumberNew":{
+        },
+        "SeasonId":57100008
+    },
+    {
+        "InternalId":25300089,
+        "Id":"survivor_martha",
+        "Rarity":4,
+        "Type":3,
+        "Profession":"assault",
+        "SpeedMove":5000,
+        "SkillConfig":{
+            "25400592":1,
+            "25400599":1,
+            "25400600":2,
+            "25400601":3
+        },
+        "ChipNumber":{
+            "203344":10
+        },
+        "Name":"survivor_martha_name",
+        "Art_3d":"model_survivor_martha",
+        "Description":"survivor_martha_info",
+        "ImageBig":"",
+        "ImageSmall":"sp_avatar_survivor_martha",
+        "LordImage":2100039,
+        "Priority":39,
+        "Ai":"common_player",
+        "ProfessionTag":[
+            27500002,
+            27500007,
+            27500008
+        ],
+        "SurvivorScene":"",
+        "UiPreview_3d":"preview_survivor_martha",
+        "Tags":[
+            "hero"
+        ],
+        "Pet":[
+        ],
+        "PetScope":0,
+        "PetValue":[
+        ],
+        "CircleSpeed":2,
+        "DefaultAvatar":0,
+        "IsLock":0,
+        "BroadcastType":1,
+        "RotateDegree":30,
+        "MinServerVersion":"",
+        "ExploreBenefitDisplay":[
+            "calc_survivor_hp",
+            "calc_survivor_atk",
+            "calc_survivor_def"
+        ],
+        "SurvivorCommonChip":202060,
+        "DisplacementParam":1,
+        "WhatWeek":0,
+        "WhatDay":0,
+        "Spine":"character_npc_female_martha_fullbody",
+        "SurvivorGeneration":4,
+        "RelatedSurvivor":0,
+        "Backgroup":"survivor_preview_scene_street",
+        "ServerList":[
+        ],
+        "ClientVersion":"1.10.10",
+        "ReplaceSurvivor":0,
+        "ChipNumberNew":{
+        },
+        "SeasonId":57100008
+    },
+    {
+        "InternalId":25300090,
+        "Id":"survivor_daryl",
+        "Rarity":5,
+        "Type":2,
+        "Profession":"sniper",
+        "SpeedMove":5000,
+        "SkillConfig":{
+            "25400609":1,
+            "25400610":1,
+            "25400611":2,
+            "25400612":3
+        },
+        "ChipNumber":{
+            "203364":10
+        },
+        "Name":"survivor_daryl_name",
+        "Art_3d":"model_survivor_daryl",
+        "Description":"survivor_daryl_info",
+        "ImageBig":"",
+        "ImageSmall":"sp_avatar_survivor_wd_hero",
+        "LordImage":2100040,
+        "Priority":40,
+        "Ai":"common_player",
+        "ProfessionTag":[
+            27500003,
+            27500007,
+            27500013
+        ],
+        "SurvivorScene":"survivor_preview_scene_daryl",
+        "UiPreview_3d":"preview_survivor_daryl",
+        "Tags":[
+            "hero"
+        ],
+        "Pet":[
+            26600225
+        ],
+        "PetScope":1,
+        "PetValue":[
+        ],
+        "CircleSpeed":2,
+        "DefaultAvatar":0,
+        "IsLock":0,
+        "BroadcastType":1,
+        "RotateDegree":30,
+        "MinServerVersion":"",
+        "ExploreBenefitDisplay":[
+            "calc_survivor_hp",
+            "calc_survivor_atk",
+            "calc_survivor_def"
+        ],
+        "SurvivorCommonChip":0,
+        "DisplacementParam":1,
+        "WhatWeek":999999,
+        "WhatDay":8,
+        "Spine":"character_npc_male_daryl_fullbody",
+        "SurvivorGeneration":0,
+        "RelatedSurvivor":1,
+        "Backgroup":"survivor_preview_scene_street",
+        "ServerList":[
+        ],
+        "ClientVersion":"1.10.20",
+        "ReplaceSurvivor":0,
+        "ChipNumberNew":{
+        },
+        "SeasonId":0
     },
     {
         "InternalId":25300086,
@@ -2910,18 +3209,18 @@
         ],
         "SurvivorCommonChip":0,
         "DisplacementParam":1,
-        "WhatWeek":92,
-        "WhatDay":8,
+        "WhatWeek":9,
+        "WhatDay":1,
         "Spine":"character_npc_male_wacko_fullbody",
         "SurvivorGeneration":0,
         "RelatedSurvivor":1,
         "Backgroup":"survivor_preview_scene_street",
         "ServerList":[
-            1
         ],
         "ClientVersion":"1.9.130",
         "ReplaceSurvivor":0,
         "ChipNumberNew":{
-        }
+        },
+        "SeasonId":57100003
     }
 ]

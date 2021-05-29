@@ -141,13 +141,6 @@
         "MinorWoundRate":0.65
     },
     {
-        "InternalId":3300034,
-        "Id":"battle_climbing_tower_slg",
-        "LossRate":1,
-        "WoundRate":0,
-        "MinorWoundRate":0
-    },
-    {
         "InternalId":3300014,
         "Id":"battle_gve_rally",
         "LossRate":1,
@@ -211,10 +204,45 @@
         "MinorWoundRate":0.998
     },
     {
+        "InternalId":3300034,
+        "Id":"battle_climbing_tower_slg",
+        "LossRate":1,
+        "WoundRate":0,
+        "MinorWoundRate":0
+    },
+    {
         "InternalId":3300035,
         "Id":"battle_plasma_cannon",
         "LossRate":1,
         "WoundRate":0.2,
         "MinorWoundRate":0.7
+    },
+    {
+        "InternalId":3300036,
+        "Id":"battle_treasure_discover_dig_attack",
+        "LossRate":1,
+        "WoundRate":0.35,
+        "MinorWoundRate":0.65
+    },
+    {
+        "InternalId":3300037,
+        "Id":"battle_treasure_discover_dig_defence",
+        "LossRate":1,
+        "WoundRate":0.35,
+        "MinorWoundRate":0.65
+    },
+    {
+        "InternalId":3300038,
+        "Id":"battle_kvk",
+        "LossRate":1,
+        "WoundRate":0.1,
+        "MinorWoundRate":0.55
+    },
+    {
+        "InternalId":3300039,
+        "Id":"battle_strongest_crusade",
+        "LossRate":1,
+        "WoundRate":0,
+        "MinorWoundRate":1
     }
 ]

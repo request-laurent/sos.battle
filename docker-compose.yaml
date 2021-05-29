@@ -1,0 +1,38 @@
+version: '3.4'
+
+services:
+  SOSBattleSimAppDB:
+    image: mariadb
+    restart: always
+    environment:
+      MARIADB_DATABASE: battle
+      MARIADB_USER: battle
+      MARIADB_ROOT_PASSWORD: battle
+#    logging:
+#      driver: syslog
+#      options:
+#        tag: "{{.DaemonName}}(image={{.ImageName}};name={{.Name}};id={{.ID}})"
+    networks:
+        - backend
+#    volumes:
+#        - ${PWD}/mariadb:/var/lib/mysql
+
+  SOSBattleSimApp:
+    image: c0mpiler/sos.battle.sim
+    depends_on:
+      - SOSBattleSimAppDB
+#    logging:
+#      driver: syslog
+#      options:
+#        tag: "{{.DaemonName}}(image={{.ImageName}};name={{.Name}};id={{.ID}})"
+    networks:
+      - frontend
+    ports:
+      - '8080:8080'
+    restart: on-failure
+
+networks:
+  frontend:
+    driver: bridge
+  backend:
+    driver: bridge

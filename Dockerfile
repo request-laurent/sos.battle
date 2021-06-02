@@ -9,6 +9,6 @@ RUN /build/build.sh
 FROM tomcat
 LABEL maintainer="sos.ninja@ooutlook.com"
 
-COPY --from=mvnbuilder /build/target/sos.battle.sim.war /usr/local/tomcat/webapps/
+COPY --from=mvnbuilder /build/target/battle.war /usr/local/tomcat/webapps/
 EXPOSE 8080
 CMD ["catalina.sh", "run"]

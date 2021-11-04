@@ -1,2 +1,4 @@
 # Maven
 target/
+/.idea/
+/.jpb/

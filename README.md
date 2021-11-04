@@ -29,7 +29,7 @@ On a mobile phone, you can add it to the desktop to have it as an application.
 ------
 
 This projet a maven Project, you can also import the project in Eclipse or your favorit java editor.
-The battle engine use a mysql database for load & save your configurations, but you can run the app wihtout it. Configure your database in persistence.xml file, the tables are automaitcly created. 
+The battle engine use a MariaDB(kind of mysql) database for load & save your configurations, but you can run the app wihtout it. Configure your database in persistence.xml file, the tables are automaitcly created. However, you will have to create teh database yourself: connect with a mysql client to the db and run "create database battle". 
 
 For maven standalone build & run : 
 

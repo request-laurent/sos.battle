@@ -71,6 +71,13 @@ public class Troop implements Serializable {
 		EMUtils.call(em -> {
 			User user = UserService.getUser();
 
+			if (user.getGroup().getId() == null )  {
+				em.persist(user.getGroup());
+			}
+			if (user.getId() == null) {
+				em.persist(user);
+			}
+
 			List<Troop> lst = em.createQuery("select o from Troop o where o.user.id=:userId and o.name=:name", Troop.class)
 					.setParameter("userId", user.getId()).setParameter("name", name).getResultList();
 			if (lst.size() > 0) {
